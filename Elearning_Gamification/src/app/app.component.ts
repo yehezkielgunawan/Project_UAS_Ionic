@@ -19,7 +19,7 @@ export class AppComponent {
     },
     {
       title: 'My Course',
-      url: '/my_course',
+      url: '/my-course-list',
       icon: 'book'
     },
     {
