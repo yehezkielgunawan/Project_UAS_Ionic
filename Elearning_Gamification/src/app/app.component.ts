@@ -23,7 +23,7 @@ export class AppComponent {
       icon: 'book'
     },
     {
-      title: 'LOGOUT',
+      title: 'Logout',
       url: '/login',
       icon: 'exit'
     }
