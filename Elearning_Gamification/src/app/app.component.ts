@@ -23,6 +23,11 @@ export class AppComponent {
       icon: 'book'
     },
     {
+      title: 'Games',
+      url: '/game',
+      icon: 'exit'
+    },
+    {
       title: 'Logout',
       url: '/login',
       icon: 'exit'
