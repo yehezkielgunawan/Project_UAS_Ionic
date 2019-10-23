@@ -10,15 +10,43 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Matematika kelas 9</ion-card-subtitle>
-      <ion-card-title>Matematika</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-      Ayo kerjakan dan tugasmu, semakin tinggi skormu semakin tinggi pula peluangmu untuk jadi juara kelas. 
-    </ion-card-content>
-  </ion-card>
-
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+          <img src="https://img.icons8.com/flat_round/128/000000/uefa-euro-trophy.png">
+      </ion-col>
+      <ion-col size="6">
+            <p> Ujang</p>
+            <p> Profesor</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [routerLink]="['/game']">
+            <img src="https://img.icons8.com/ios-filled/128/000000/battle.png">
+            <h4 class="ion-text-center">Battle</h4>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card [routerLink]="['/my-course-list']">
+            <img src="https://img.icons8.com/officel/128/000000/courses.png">
+            <h4 class="ion-text-center">Training</h4>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6">
+        <ion-card [routerLink]="['/profile']">
+            <img src="https://img.icons8.com/officel/128/000000/user.png">
+            <h4 class="ion-text-center">Profile</h4>
+        </ion-card>
+      </ion-col>
+      <ion-col size="6">
+        <ion-card [routerLink]="['/login']">
+            <img src="https://img.icons8.com/cute-clipart/128/000000/exit.png">
+            <h4 class="ion-text-center">Logout</h4>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

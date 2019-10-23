@@ -19,14 +19,19 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'My Course',
+      title: 'Training',
       url: '/my-course-list',
       icon: 'book'
     },
     {
-      title: 'Games',
+      title: 'Battle',
       url: '/game',
-      icon: 'exit'
+      icon: 'ios-medal'
+    },
+    {
+      title: 'Profile',
+      url: '/profile',
+      icon: 'md-person'
     },
     {
       title: 'Logout',
