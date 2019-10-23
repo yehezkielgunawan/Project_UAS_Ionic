@@ -25,7 +25,7 @@ export class AppComponent {
     {
       title: 'Games',
       url: '/game',
-      icon: 'exit'
+      icon: 'ios-medal'
     },
     {
       title: 'Logout',
