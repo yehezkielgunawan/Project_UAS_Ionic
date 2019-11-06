@@ -9,9 +9,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuth } from 'angularfire2/auth';
-import { firebaseConfig } from '../config';
+import { firebaseConfig } from './credentials';
 
 import { LoginPage } from '../app/login/login.page';
 
@@ -25,6 +27,8 @@ import { LoginPage } from '../app/login/login.page';
     IonicModule.forRoot(), 
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig.fire),
+    AngularFirestoreModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,

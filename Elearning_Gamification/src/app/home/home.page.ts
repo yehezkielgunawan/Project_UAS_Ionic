@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  public items: Observable<any[]>;
+
+  constructor(
+    private db: AngularFirestore
+  )
+  {}
+
+  ngOninit() {
+
+  }
 
 }
