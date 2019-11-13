@@ -19,11 +19,6 @@ export class AppComponent {
       icon: 'home'
     },
     {
-      title: 'Training',
-      url: '/my-course-list',
-      icon: 'book'
-    },
-    {
       title: 'Battle',
       url: '/game',
       icon: 'ios-medal'
@@ -35,7 +30,7 @@ export class AppComponent {
     },
     {
       title: 'Logout',
-      url: '/login',
+      url: '/auth',
       icon: 'exit'
     }
   ];
