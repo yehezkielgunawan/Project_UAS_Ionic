@@ -1,11 +1,27 @@
-<ion-content [scrollEvents]="true" (ionScroll)="logScrolling($event)">
-  <div class="header">
-    <ion-menu-button autoHide="true" *ngIf=""></ion-menu-button>
-    <pre>goleran app</pre>
-  </div>
-  
-  
+
+<ion-content>
+  <div class="body flex-containe">
+    <div class="header">
+      <div class="navbar">
+        <ion-menu-button autoHide="true"></ion-menu-button>
+        <pre>goleran app</pre>
+      </div>
+      <div class="avatar">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+      </div>
+    
+    </div>
+    
+    <ion-card class="floating-card">
+      <div class="stats">
+        <p class="vline">Profesor</p>
+        <p class="vline">lvl 10</p>
+        <p>xp100</p>
+      </div>
+    </ion-card>
+
     <ion-grid>
+      <div class="none">
       <ion-row>
         <ion-col size="6">
             <img src="https://img.icons8.com/flat_round/128/000000/uefa-euro-trophy.png">
@@ -17,6 +33,7 @@
               <p *ngFor="let item of score" > Training Point : {{ item.score }}</p>
         </ion-col>
       </ion-row>
+      </div>
       <ion-row>
         <ion-col size="6">
           <ion-card [routerLink]="['/game']">
@@ -46,4 +63,5 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-content>
+  </div>
+</ion-content>

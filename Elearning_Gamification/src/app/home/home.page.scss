@@ -1,19 +1,59 @@
-.header{
-  height: 50vh;
-  margin: 0 !important;
-  background-color: rgb(38, 187, 236);
+.body{
   position: inherit;
 
-  ion-menu-button{
-    margin: 10px 0 0 10px !important;
-    padding: 0 !important;
-    position: fixed;
-    color: white;
+  .header{
+    height: 50vh;
+    margin: 0 !important;
+    background-color: rgb(38, 187, 236);
+    width: 100%;
+
+    .navbar{
+      position: fixed;
+      display: flex;
+      color: white;
+      width: 100%;
+
+      ion-menu-button{
+        padding: 10px 0 0 10px;
+        color: white;
+      }
+      pre{
+        padding-left: 20%;
+      }
+    }
+
+    .avatar{
+      padding: 30% 0 0 32%;
+
+      img{
+        width: 22vh;
+        border-radius: 50%;
+      }
+    }
   }
 
-  pre{
-    color: white;
-    margin: 0 0 0 35% !important;
-    padding: 15px 0 0 0 !important;
+  .floating-card{
+    background-color: whitesmoke;
+    margin: -5vh 0 0 10%;
+    border-radius: 10%;
+    height: 12vhs;
+    width: 80%;  
+
+    .stats{
+      display:flex; 
+      flex-direction:row; 
+      justify-content:space-evenly;
+      padding: 10px 0 0 0;
+      font-size: large;
+
+      .vline{
+        padding-right: 15px;
+        border-right: 2px solid lightgray;
+      }
+    }
+  }
+
+  .none{
+    display: none;
   }
 }
