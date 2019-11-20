@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>training</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item>{{a[0]}} + {{a[1]}} = &nbsp; <ion-input [(ngModel)]="hasil" name="hasil"></ion-input></ion-item>
+    <ng-template [ngIf] = "page >= 3" [ngIfElse]="none">
+      <ion-button (click)="kirimhasil(hasil)">Submit</ion-button>
+    </ng-template>
+    <ng-template #none>
+      <ion-button (click)="nextpage(hasil)">Next</ion-button>
+    </ng-template>
+  </form>
+</ion-content>
