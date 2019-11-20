@@ -1,1 +1,19 @@
+.header{
+  height: 50vh;
+  margin: 0 !important;
+  background-color: rgb(38, 187, 236);
+  position: inherit;
 
+  ion-menu-button{
+    margin: 10px 0 0 10px !important;
+    padding: 0 !important;
+    position: fixed;
+    color: white;
+  }
+
+  pre{
+    color: white;
+    margin: 0 0 0 35% !important;
+    padding: 15px 0 0 0 !important;
+  }
+}

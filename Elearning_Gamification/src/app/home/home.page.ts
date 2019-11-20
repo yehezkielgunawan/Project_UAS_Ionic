@@ -35,4 +35,8 @@ export class HomePage implements OnInit {
     });
     return this.score;
   }
+
+  logScrolling($event){
+    console.log($event);
+  }
 }
