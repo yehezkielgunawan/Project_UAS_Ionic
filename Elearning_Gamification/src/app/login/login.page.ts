@@ -4,7 +4,6 @@ import { UserService } from '../user.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
-import { exists } from 'fs';
 import { Details } from '../home/home.page';
 import { Observable, asyncScheduler } from 'rxjs';
 
@@ -25,6 +24,7 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.user.clearUserLoggedIn();
   }
 
   async login() {
