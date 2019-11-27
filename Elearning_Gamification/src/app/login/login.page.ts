@@ -4,6 +4,9 @@ import { UserService } from '../user.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
+import { exists } from 'fs';
+import { Details } from '../home/home.page';
+import { Observable, asyncScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -35,8 +38,12 @@ export class LoginPage implements OnInit {
           username,
           uid: res.user.uid
         });
-        this.presentAlert("Login Successfull", "Welcome User!", "Here is your dashboard");
-        console.log("yay");
+        let users: Observable<Details>;
+
+        users = this.user.getUserDetails(this.user.getUID());
+
+        this.presentAlert("Login Successfull", "Welcome Back !", "Here is your dashboard");
+        console.log(users);
         this.router.navigate(['/home']);
       }
     } catch (err) {

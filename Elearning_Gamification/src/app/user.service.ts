@@ -1,6 +1,8 @@
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
+import { Details } from './home/home.page';
 
 interface user {
     username: string,
@@ -13,7 +15,8 @@ export class UserService {
 
     constructor(
         private afAuth: AngularFireAuth,
-        private router: Router
+        private router: Router,
+        private firestore: AngularFirestore
         ) {
 
     }
@@ -37,5 +40,9 @@ export class UserService {
         } else {
             return this.user.uid;
         }
+    }
+
+    getUserDetails(uid: string): AngularFirestoreDocument<Details>{
+        return this.firestore.collection('users').doc(uid);
     }
 }

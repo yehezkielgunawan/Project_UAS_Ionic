@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { resolve } from 'url';
 
-
+export interface Details {
+  nickname: string;
+  username: string;
+}
 
 @Component({
   selector: 'app-home',
@@ -22,10 +25,12 @@ export class HomePage implements OnInit {
     private afs: AngularFirestore
   ) { }
 
+  public details: Observable<Details>;
+
   ngOnInit() {
     this.currentUser();
-  }
 
+  }
   currentUser() {
     let user = this.afauth.auth.currentUser;
 
@@ -35,6 +40,8 @@ export class HomePage implements OnInit {
     } else {
 
       console.log(user.uid);
+
+      this.details = this.userService.getUserDetails(user.uid).valueChanges();
     }
 
   }
