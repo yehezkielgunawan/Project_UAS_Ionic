@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Injectable } from '@angular/core';
 
@@ -10,7 +11,10 @@ interface user {
 export class UserService {
     private user: user;
 
-    constructor(private afAuth: AngularFireAuth) {
+    constructor(
+        private afAuth: AngularFireAuth,
+        private router: Router
+        ) {
 
     }
 
