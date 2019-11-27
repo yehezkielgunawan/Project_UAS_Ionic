@@ -23,6 +23,25 @@ export class UserService {
 
     setUser(user: user) {
         this.user = user;
+        this.setUserLoggedIn(user);
+    }
+
+    setUserLoggedIn(user: user){
+        localStorage.setItem('username',user.username);
+        localStorage.setItem('uid',user.uid);
+    }
+
+    getUserLoggedIn(){
+        if (localStorage.getItem('uid')) {
+            return localStorage.getItem('uid');
+        }
+        else {
+            return null;
+        }
+    }
+
+    clearUserLoggedIn(){
+        localStorage.clear();
     }
 
     getUID() {
@@ -45,4 +64,6 @@ export class UserService {
     getUserDetails(uid: string): AngularFirestoreDocument<Details>{
         return this.firestore.collection('users').doc(uid);
     }
+
+
 }

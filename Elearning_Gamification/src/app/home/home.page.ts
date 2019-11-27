@@ -26,24 +26,18 @@ export class HomePage implements OnInit {
   ) { }
 
   public details: Observable<Details>;
+  public isLoggedin = this.userService.getUserLoggedIn();
+
 
   ngOnInit() {
-    this.currentUser();
+    if(!this.isLoggedin){
+      this.router.navigateByUrl('login');
+    }
 
+    this.currentUser();
   }
   currentUser() {
-    let user = this.afauth.auth.currentUser;
-
-    if (!user.uid) {
-      console.log('Not Logged in! Please login');
-      this.router.navigate(['login']);
-    } else {
-
-      console.log(user.uid);
-
-      this.details = this.userService.getUserDetails(user.uid).valueChanges();
+      this.details = this.userService.getUserDetails(this.isLoggedin).valueChanges();
     }
 
   }
-
-}

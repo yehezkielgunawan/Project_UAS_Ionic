@@ -38,12 +38,9 @@ export class LoginPage implements OnInit {
           username,
           uid: res.user.uid
         });
-        let users: Observable<Details>;
 
-        users = this.user.getUserDetails(this.user.getUID());
 
         this.presentAlert("Login Successfull", "Welcome Back !", "Here is your dashboard");
-        console.log(users);
         this.router.navigate(['/home']);
       }
     } catch (err) {
