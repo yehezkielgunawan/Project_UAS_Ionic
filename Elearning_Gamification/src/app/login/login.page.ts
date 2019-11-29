@@ -1,3 +1,4 @@
+import { UserServiceService } from './../services/user-service.service';
 import { Router } from '@angular/router';
 import { FIREBASE_CONFIG } from './../environment';
 import { Component, OnInit } from '@angular/core';
@@ -11,50 +12,23 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  email: string = "";
-  password: string = "";
+  // email: string = "";
+  // password: string = "";
 
   constructor(
     public router: Router,
-    public alertController: AlertController
+    public alertController: AlertController,
+    public userService: UserServiceService
   ) { }
 
   ngOnInit() {
   }
 
-  async login() {
-    const { email, password } = this;
-    try {
-      await firebase.auth().signInWithEmailAndPassword(email, password);
-      let userId = firebase.auth().currentUser.uid;
-      firebase.database().ref('/users/' + userId).once('value').then(snapshot => {
-        var nickname = (snapshot.val() && snapshot.val().nickname);
-        this.presentAlert('Welcome ' + nickname, "This is your dashboard!");
-        console.log(nickname);
-      })
-      this.router.navigate(['home']);
-      console.log('yay');
-    } catch (error) {
-      console.log(error.message);
-      if (error.code === "auth/user-not-found") {
-        this.presentAlert("User not found!", "Wrong password or username");
-        console.log("User not found!");
-      } else {
-        this.presentAlert(error.code, error.message);
-      }
-
-    }
+  async login(email, password) {
+    this.userService.login_firebase(email, password);
   }
 
-  async presentAlert(header, message) {
-    const alert = await this.alertController.create({
-      header,
-      message,
-      buttons: ['OK']
-    });
 
-    await alert.present();
-  }
 
 
 

@@ -1,3 +1,4 @@
+import { UserServiceService } from './../services/user-service.service';
 import { FIREBASE_CONFIG } from './../environment';
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
@@ -10,25 +11,13 @@ import { Router } from '@angular/router';
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserServiceService) { }
 
   ngOnInit() {
   }
 
-  async register(email, nickname, password, cpassword) {
-    try {
-      await firebase.auth().createUserWithEmailAndPassword(email, password);
-      let user_data = firebase.auth().currentUser;
-      firebase.database().ref('users/' + user_data.uid).set({
-        email,
-        nickname,
-        password
-      });
-      this.router.navigate(['login']);
-      console.log('Yay, registered to Firebase!!! HAHAHA');
-    } catch (error) {
-      console.log(error.message);
-    }
+  register(email, nickname, password, cpassword) {
+    this.userService.register_firebase(email, nickname, password, cpassword);
   }
 
 }
