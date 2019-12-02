@@ -1,13 +1,67 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content class="ion-padding">
-  <ion-button (click)="logout()">
-    LOGOUT
-  </ion-button>
+<ion-content>
+  <div class="body flex-containe">
+    <div class="header">
+      <div class="navbar">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+        <pre>goleran app</pre>
+      </div>
+      <div class="avatar">
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+      </div>
+    
+    </div>
+    
+    <ion-card class="floating-card">
+      <div class="stats">
+        <p class="vline">Profesor</p>
+        <p class="vline">lvl 10</p>
+        <p>xp100</p>
+      </div>
+    </ion-card>
+
+    <ion-grid>
+      <div class="none">
+      <ion-row>
+        <ion-col size="6">
+            <img src="https://img.icons8.com/flat_round/128/000000/uefa-euro-trophy.png">
+        </ion-col>
+        <ion-col size="6">
+              <pre>{{ items | json }}</pre>
+  
+              <p> Profesor</p>
+              <p *ngFor="let item of score" > Training Point : {{ item.score }}</p>
+        </ion-col>
+      </ion-row>
+      </div>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card [routerLink]="['/game']">
+              <img src="https://img.icons8.com/ios-filled/128/000000/battle.png">
+              <h4 class="ion-text-center">Battle</h4>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card [routerLink]="['/training']">
+              <img src="https://img.icons8.com/officel/128/000000/courses.png">
+              <h4 class="ion-text-center">Training</h4>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card [routerLink]="['/profile']">
+              <img src="https://img.icons8.com/officel/128/000000/user.png">
+              <h4 class="ion-text-center">Profile</h4>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card (click)="logout()">
+              <img src="https://img.icons8.com/cute-clipart/128/000000/exit.png">
+              <h4 class="ion-text-center">Logout</h4>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
