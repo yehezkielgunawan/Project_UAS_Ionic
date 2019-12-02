@@ -1,24 +1,37 @@
 
 <ion-content>
-  <div class="body flex-containe">
+  <div class="body flex-container">
     <div class="header">
-      <div class="navbar">
-        <ion-menu-button autoHide="false"></ion-menu-button>
-        <pre>goleran app</pre>
-      </div>
-      <div class="avatar">
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
-      </div>
+      <ion-row>
+        <div class="navbar">
+          <div class="menu">
+            <pre></pre>
+            <pre></pre>
+            <pre></pre>
+          </div>
+          <ion-col text-center>
+            <p>goleran app</p>
+          </ion-col>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="profile-container">
+          <ion-col>
+            <div class="avatar">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="stats">
+              <p class="vline">myName</p>
+              <p class="vline">Professor</p>
+              <p>xp100</p>
+            </div>
+          </ion-col>
+        </div>
+      </ion-row>
     
     </div>
-    
-    <ion-card class="floating-card">
-      <div class="stats">
-        <p class="vline">Profesor</p>
-        <p class="vline">lvl 10</p>
-        <p>xp100</p>
-      </div>
-    </ion-card>
 
     <ion-grid>
       <div class="none">
@@ -34,7 +47,7 @@
       <ion-row>
         <ion-col size="6">
           <ion-card class="card-item" [routerLink]="['/game']">
-              <img src="../assets/icon/undraw_be_the_hero_ssr2.png">
+              <img src="../assets/icon/undraw_may_the_force_bgdm.png">
               <h4 class="ion-text-center">Battle</h4>
           </ion-card>
         </ion-col>
