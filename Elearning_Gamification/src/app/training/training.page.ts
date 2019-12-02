@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
 import { TrainingService } from '../services/training.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-training',
@@ -9,7 +10,7 @@ import { TrainingService } from '../services/training.service';
 })
 export class TrainingPage implements OnInit {
 
-  constructor(private trainingService: TrainingService) { }
+  constructor(private trainingService: TrainingService, private router: Router) { }
 
   soal: number[] = [1, 2];
   operator;
@@ -19,17 +20,25 @@ export class TrainingPage implements OnInit {
   operatorList = ['+', '-', '*', '/'];
   hasil: any;
   exp: number = 0;
+  localStorageUid;
 
   ngOnInit() {
     this.showQuestion();
+    let loggedin = localStorage.getItem('uid');
+    if(loggedin == null){
+      this.router.navigate(['login']);
+    }
+    else {
+      this.localStorageUid = loggedin;
+    }
   }
 
   showQuestion() {
     console.log('Score : '+ this.score);
     this.questionNumber++;
-    const uid = firebase.auth().currentUser.uid;
+    // const uid = firebase.auth().currentUser.uid;
     let xp;
-    firebase.database().ref('/users/' + uid).once('value').then(snapshot => {
+    firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
       xp = (snapshot.val() && snapshot.val().xp);
       if (xp <= 100) {
         this.soal = this.trainingService.generateQuestionSatuan();
@@ -80,19 +89,19 @@ export class TrainingPage implements OnInit {
       this.score++;
     }
     console.log(this.score);
-    const uid = firebase.auth().currentUser.uid;
+    // const uid = firebase.auth().currentUser.uid;
     if (this.score >= 1) {
       if(this.score == 1) {
-        firebase.database().ref('/users/' + uid).once('value').then(snapshot => {
+        firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
           this.exp = (snapshot.val() && snapshot.val().xp);
           this.exp += 10;
-          firebase.database().ref('users/' + uid).update({ xp: this.exp });
+          firebase.database().ref('users/' + this.localStorageUid).update({ xp: this.exp });
         });
       } else {
-        firebase.database().ref('/users/' + uid).once('value').then(snapshot => {
+        firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
           this.exp = (snapshot.val() && snapshot.val().xp);
           this.exp += 5;
-          firebase.database().ref('users/' + uid).update({ xp: this.exp });
+          firebase.database().ref('users/' + this.localStorageUid).update({ xp: this.exp });
         });
       }
     }

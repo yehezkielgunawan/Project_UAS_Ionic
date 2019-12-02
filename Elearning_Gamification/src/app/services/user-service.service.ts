@@ -13,6 +13,9 @@ export class UserServiceService {
 
   async register_firebase(email, nickname, password, cpassword) {
     try {
+      if(password != cpassword){
+        throw(1);
+      }
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       let user_data = firebase.auth().currentUser;
       firebase.database().ref('users/' + user_data.uid).set({
@@ -22,9 +25,15 @@ export class UserServiceService {
         xp : 0,
       });
       this.router.navigate(['login']);
+      this.presentAlert("Congratulations!", "You are registered. Let's try to login!");
       console.log('Yay, registered to Firebase!!! HAHAHA');
     } catch (error) {
-      console.log(error.message);
+      if(error == 1){
+        this.presentAlert('Register Failed !', 'Password dismatch !!!');
+      } else {
+        this.presentAlert('Register Failed !', error.message);
+        console.log(error.message);
+      }
     }
   }
 
