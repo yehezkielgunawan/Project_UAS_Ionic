@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>training</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <p>{{soal[0]}} {{operator}} {{soal[1]}}</p><ion-input [(ngModel)]="hasil" name="hasil"></ion-input>
+  <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none">
+    <ion-button (click)="submitTraining(hasil)">Submit</ion-button>
+  </ng-template>
+  <ng-template #none>
+    <ion-button (click)="nextPage(hasil)">Next</ion-button>
+  </ng-template>
+</ion-content>

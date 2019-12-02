@@ -18,7 +18,8 @@ export class UserServiceService {
       firebase.database().ref('users/' + user_data.uid).set({
         email,
         nickname,
-        password
+        password,
+        xp : 0,
       });
       this.router.navigate(['login']);
       console.log('Yay, registered to Firebase!!! HAHAHA');
