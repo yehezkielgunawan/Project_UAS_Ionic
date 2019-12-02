@@ -22,42 +22,39 @@
 
     <ion-grid>
       <div class="none">
-      <ion-row>
-        <ion-col size="6">
-            <img src="https://img.icons8.com/flat_round/128/000000/uefa-euro-trophy.png">
-        </ion-col>
-        <ion-col size="6">
-              <pre>{{ items | json }}</pre>
-  
-              <p> Profesor</p>
-              <p *ngFor="let item of score" > Training Point : {{ item.score }}</p>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+          <ion-col size="6">
+                <pre>{{ items | json }}</pre>
+    
+                <p> Profesor</p>
+                <p *ngFor="let item of score" > Training Point : {{ item.score }}</p>
+          </ion-col>
+        </ion-row>
       </div>
       <ion-row>
         <ion-col size="6">
-          <ion-card [routerLink]="['/game']">
-              <img src="https://img.icons8.com/ios-filled/128/000000/battle.png">
+          <ion-card class="card-item" [routerLink]="['/game']">
+              <img src="../assets/icon/undraw_be_the_hero_ssr2.png">
               <h4 class="ion-text-center">Battle</h4>
           </ion-card>
         </ion-col>
         <ion-col size="6">
-          <ion-card [routerLink]="['/training']">
-              <img src="https://img.icons8.com/officel/128/000000/courses.png">
+          <ion-card class="card-item" [routerLink]="['/training']">
+              <img src="../assets/icon/undraw_ideation_2a64.png">
               <h4 class="ion-text-center">Training</h4>
           </ion-card>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="6">
-          <ion-card [routerLink]="['/profile']">
-              <img src="https://img.icons8.com/officel/128/000000/user.png">
+          <ion-card class="card-item" [routerLink]="['/profile']">
+              <img src="../assets/icon/undraw_profile_6l1l.png">
               <h4 class="ion-text-center">Profile</h4>
           </ion-card>
         </ion-col>
         <ion-col size="6">
-          <ion-card (click)="logout()">
-              <img src="https://img.icons8.com/cute-clipart/128/000000/exit.png">
+          <ion-card class="card-item" (click)="logout()">
+              <img src="../assets/icon/undraw_Login_v483.png">
               <h4 class="ion-text-center">Logout</h4>
           </ion-card>
         </ion-col>

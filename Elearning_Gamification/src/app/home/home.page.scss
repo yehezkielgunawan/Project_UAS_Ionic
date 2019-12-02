@@ -1,60 +1,70 @@
-.body{
-    position: inherit;
-  
-    .header{
-      height: 50vh;
-      margin: 0 !important;
-      background-color: rgb(38, 187, 236);
-      width: 100%;
-  
-      .navbar{
-        position: fixed;
-        display: flex;
-        color: white;
-        background-color: rgb(38, 187, 236);
-        width: 100%;
-  
-        ion-menu-button{
-          padding: 10px 0 0 10px;
-          color: white;
+
+@media only screen and (max-device-width: 600px) and (orientation:portrait) {
+    /* For portrait layouts only */
+    .body{
+        position: inherit;
+      
+        .header{
+          height: 50vh;
+          margin: 0 !important;
+          background-color: rgb(38, 187, 236);
+          width: 100%;
+      
+          .navbar{
+            position: fixed;
+            display: flex;
+            color: white;
+            background-color: rgb(38, 187, 236);
+            width: 100%;
+      
+            ion-menu-button{
+              padding: 10px 0 0 10px;
+              color: white;
+            }
+            pre{
+              padding-left: 20%;
+            }
+          }
+      
+          .avatar{
+            align: center;
+      
+            img{
+              width: 22vh;
+              border-radius: 50%;
+            }
+          }
         }
-        pre{
-          padding-left: 20%;
+      
+        .floating-card{
+          background-color: whitesmoke;
+          margin: -5vh 0 0 10%;
+          border-radius: 10%;
+          height: 12vhs;
+          width: 80%;  
+      
+          .stats{
+            display:flex; 
+            flex-direction:row; 
+            justify-content:space-evenly;
+            padding: 10px 0 0 0;
+            font-size: large;
+      
+            .vline{
+              padding-right: 15px;
+              border-right: 2px solid lightgray;
+            }
+          }
         }
-      }
-  
-      .avatar{
-        padding: 30% 0 0 32%;
-  
-        img{
-          width: 22vh;
-          border-radius: 50%;
+      
+        .none{
+          display: none;
         }
-      }
-    }
-  
-    .floating-card{
-      background-color: whitesmoke;
-      margin: -5vh 0 0 10%;
-      border-radius: 10%;
-      height: 12vhs;
-      width: 80%;  
-  
-      .stats{
-        display:flex; 
-        flex-direction:row; 
-        justify-content:space-evenly;
-        padding: 10px 0 0 0;
-        font-size: large;
-  
-        .vline{
-          padding-right: 15px;
-          border-right: 2px solid lightgray;
+    
+        .card-item{
+          img{
+            height: 128px !important;
+          }
         }
-      }
-    }
-  
-    .none{
-      display: none;
     }
   }
