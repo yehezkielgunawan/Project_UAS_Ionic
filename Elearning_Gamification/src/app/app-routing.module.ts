@@ -20,6 +20,10 @@ const routes: Routes = [
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
+  {
+    path: 'battle',
+    loadChildren: () => import('./battle/battle.module').then( m => m.BattlePageModule)
+  },
 ];
 
 @NgModule({

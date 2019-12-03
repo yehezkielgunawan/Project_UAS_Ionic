@@ -101,15 +101,15 @@ export class UserServiceService {
       ],
       buttons: [
         {
+          text: 'Cancel',
+          role: 'cancel',
+        },
+        {
           text: 'OK !',
           handler: data => {
             this.updateName(data.nickname);
           },
         },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-        }
 
       ]
     });
