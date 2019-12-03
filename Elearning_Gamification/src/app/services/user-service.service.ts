@@ -61,6 +61,24 @@ export class UserServiceService {
     }
   }
 
+  getProfileDetails() {
+    var localStorageUid = localStorage.getItem('uid');
+    var detailProfile : string[] = [];
+    firebase.database().ref('/users/' + localStorageUid).once('value').then(snapshot => {
+      detailProfile['name'] = snapshot.val().nickname;
+      detailProfile['xp'] = snapshot.val().xp;
+      // detailProfile['pict'] = snapshot.val().picture;
+    });
+    return detailProfile;
+  }
+
+  updateName(name){
+    var localStorageUid = localStorage.getItem('uid');
+    firebase.database().ref('/users/' + localStorageUid).update({ nickname: name });
+    this.presentAlert('Update Success !', 'You have updated your name');
+    this.router.navigate(['home']);
+  }
+
   async presentAlert(header, message) {
     const alert = await this.alertController.create({
       header,
@@ -69,5 +87,35 @@ export class UserServiceService {
     });
 
     await alert.present();
+  }
+
+  async inputAlert(header) {
+    const alert = await this.alertController.create({
+      header,
+      inputs:[
+        {
+          name: 'nickname',
+          type: 'text',
+          placeholder: 'Input your new nickname',
+        }
+      ],
+      buttons: [
+        {
+          text: 'OK !',
+          handler: data => {
+            this.updateName(data.nickname);
+          },
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        }
+
+      ]
+    });
+
+    await alert.present();
+
+    return alert.inputs;
   }
 }

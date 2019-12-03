@@ -18,7 +18,6 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     let loggedin = localStorage.getItem('uid');
-    console.log(loggedin);
     if (loggedin == null) {
       this.router.navigate(['login']);
     }
