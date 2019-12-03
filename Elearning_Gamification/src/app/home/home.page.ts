@@ -18,6 +18,7 @@ export class HomePage implements OnInit{
 
   ngOnInit(){
     let loggedin = localStorage.getItem('uid');
+    console.log(loggedin);
     if(loggedin == null){
       this.router.navigate(['login']);
     }
@@ -30,8 +31,9 @@ export class HomePage implements OnInit{
       console.log(error.message);
     });
     this.router.navigate(['login']);
-    console.log('Yay logout!');
     localStorage.clear();
+    this.presentAlert("You've been logged out!", "");
+    console.log('Yay logout!');
   }
 
   async presentAlert(header, message) {
