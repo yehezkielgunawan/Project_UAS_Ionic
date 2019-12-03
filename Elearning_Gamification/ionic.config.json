@@ -1,5 +1,8 @@
 {
   "name": "Elearning_Gamification",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

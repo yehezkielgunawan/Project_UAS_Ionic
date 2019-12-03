@@ -13,6 +13,11 @@ export class RegisterPage implements OnInit {
 
   constructor(private router: Router, private userService: UserServiceService) { }
 
+  email: string = "";
+  password: string = "";
+  nickname: string = "";
+  cpassword: string = "";
+
   ngOnInit() {
   }
 

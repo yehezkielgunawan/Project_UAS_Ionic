@@ -12,8 +12,8 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginPage implements OnInit {
 
-  // email: string = "";
-  // password: string = "";
+  email: string = "";
+  password: string = "";
 
   constructor(
     public router: Router,
