@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { UserServiceService } from '../services/user-service.service';
 import { Camera, PictureSourceType, CameraOptions } from '@ionic-native/camera/ngx';
 import { File } from '@ionic-native/file/ngx';
@@ -20,7 +20,7 @@ export class ProfilePage implements OnInit {
 
   constructor(private camera: Camera, private file: File, private Http: HttpClient, private userService: UserServiceService,
               private plt: Platform, private storage: Storage, private webview: WebView,
-              private actionSheetController: ActionSheetController) { }
+              private actionSheetController: ActionSheetController, private ref: ChangeDetectorRef) { }
   ngOnInit() {
     this.profileDetails = this.userService.getProfileDetails();
     this.plt.ready().then(() => {
@@ -91,7 +91,52 @@ export class ProfilePage implements OnInit {
     this.camera.getPicture(options).then(imagePath =>  {
       var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
       var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
+      // console.log(correctPath,currentName);
+      this.copyFileToLocalDir(correctPath,currentName, this.createFileName());
     });
+  }
+
+  copyFileToLocalDir(namePath,currentName,newFileName){
+    console.log(this.file.dataDirectory);
+    this.file.copyFile(namePath,currentName, this.file.dataDirectory, newFileName).then(_=> {
+      console.log("YEY");
+      this.updateStoredImages(newFileName);
+    }, error => {
+      console.log(error);
+    }
+    );
+  }
+
+  updateStoredImages(name){
+    this.storage.get(STORAGE_KEY).then(images => {
+      let arr = JSON.parse(images);
+      if(!arr){
+        let newImages = [name];
+        this.storage.set(STORAGE_KEY,JSON.stringify(newImages));
+      }else{
+        arr.push(name);
+        this.storage.set(STORAGE_KEY,JSON.stringify(arr));
+      }
+
+      let filePath = this.file.dataDirectory + name;
+      let resPath = this.pathForImage(filePath);
+
+      let newEntry = {
+        name: name,
+        path: resPath,
+        filePath: filePath,
+      };
+
+      this.images = [newEntry, ...this.images];
+      this.ref.detectChanges();
+    });
+  }
+
+  createFileName(){
+    var d = new Date(),
+        n = d.getTime(),
+        newFilename = n + '.jpg';
+    return newFilename;
   }
 
 
