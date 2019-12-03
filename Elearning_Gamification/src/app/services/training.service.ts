@@ -9,7 +9,7 @@ export class TrainingService {
 
   a: number[] = [1, 2];
 
-  generateQuestionSatuan(){
+  generateQuestionSatuan() {
     let temp;
     this.a[0] = Math.floor(Math.random() * 1000000 % 10);
     this.a[1] = Math.floor(Math.random() * 1000000 % 10);
@@ -21,7 +21,7 @@ export class TrainingService {
     return this.a;
   }
 
-  generateQuestionPuluhan(){
+  generateQuestionPuluhan() {
     let temp;
     this.a[0] = Math.floor(Math.random() * 1000000 % 100);
     this.a[1] = Math.floor(Math.random() * 1000000 % 100);
@@ -33,7 +33,7 @@ export class TrainingService {
     return this.a;
   }
 
-  generateQuestionRatusan(){
+  generateQuestionRatusan() {
     let temp;
     this.a[0] = Math.floor(Math.random() * 1000000 % 1000);
     this.a[1] = Math.floor(Math.random() * 1000000 % 1000);

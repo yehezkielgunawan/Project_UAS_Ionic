@@ -26,7 +26,7 @@ export class TrainingPage implements OnInit {
   ngOnInit() {
     this.showQuestion();
     let loggedin = localStorage.getItem('uid');
-    if(loggedin == null){
+    if (loggedin == null) {
       this.router.navigate(['login']);
     }
     else {
@@ -35,7 +35,7 @@ export class TrainingPage implements OnInit {
   }
 
   showQuestion() {
-    console.log('Score : '+ this.score);
+    console.log('Score : ' + this.score);
     this.questionNumber++;
     // const uid = firebase.auth().currentUser.uid;
     let xp;
@@ -82,7 +82,7 @@ export class TrainingPage implements OnInit {
     this.ngOnInit();
   }
 
-  submitTraining(hasil){
+  submitTraining(hasil) {
     console.log('Answer : ' + this.answer);
     console.log('Hasil : ' + hasil);
     if (this.answer == hasil) {
@@ -92,50 +92,50 @@ export class TrainingPage implements OnInit {
     console.log(this.score);
     // const uid = firebase.auth().currentUser.uid;
     if (this.score >= 1) { //tambah jadi 5
-      if(this.score == 1) { //tambah jadi 10
+      if (this.score == 1) { //tambah jadi 10
         firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
           var trainingCount = (snapshot.val() && snapshot.val().train_flag);
           console.log(trainingCount);
-          if(trainingCount < 3){
+          if (trainingCount < 3) {
             console.log('MASUK COK !');
             this.exp = (snapshot.val() && snapshot.val().xp);
             this.exp += 10;
             firebase.database().ref('users/' + this.localStorageUid).update({ xp: this.exp });
             trainingCount++;
             firebase.database().ref('users/' + this.localStorageUid).update({ train_flag: trainingCount });
-            this.presentAlert('Training Done','You get 10 experiences');
+            this.presentAlert('Training Done', 'You get 10 experiences');
           }
-          else{
-            this.presentAlert('Training Done','You get nothing because of training limit ! Please Battle with your friends');
+          else {
+            this.presentAlert('Training Done', 'You get nothing because of training limit ! Please Battle with your friends');
           }
         });
       } else {
         firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
           var trainingCount = (snapshot.val() && snapshot.val().train_flag);
-          if(trainingCount < 3){
+          if (trainingCount < 3) {
             this.exp = (snapshot.val() && snapshot.val().xp);
             this.exp += 5;
             firebase.database().ref('users/' + this.localStorageUid).update({ xp: this.exp });
             trainingCount++;
             firebase.database().ref('users/' + this.localStorageUid).update({ train_flag: trainingCount });
-            this.presentAlert('Training Done','You get 5 experiences');
-          }else {
-            this.presentAlert('Training Done','You get nothing because of training limit ! Please battle with your friends');
+            this.presentAlert('Training Done', 'You get 5 experiences');
+          } else {
+            this.presentAlert('Training Done', 'You get nothing because of training limit ! Please battle with your friends');
           }
         });
       }
     }
     this.router.navigate(['home']);
-    }
+  }
 
-    async presentAlert(header, message) {
-      const alert = await this.alertController.create({
-        header,
-        message,
-        buttons: ['OK']
-      });
-  
-      await alert.present();
-    }
+  async presentAlert(header, message) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }
 

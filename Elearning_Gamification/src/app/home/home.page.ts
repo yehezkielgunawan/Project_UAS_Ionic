@@ -9,17 +9,17 @@ import * as firebase from 'firebase';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage implements OnInit {
 
   constructor(
     private router: Router,
     private alertController: AlertController
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     let loggedin = localStorage.getItem('uid');
     console.log(loggedin);
-    if(loggedin == null){
+    if (loggedin == null) {
       this.router.navigate(['login']);
     }
   }
