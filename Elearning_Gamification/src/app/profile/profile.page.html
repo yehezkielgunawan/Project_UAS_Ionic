@@ -11,19 +11,10 @@
 
   <ion-list>
     <img [src]="profileDetails['image']">
-    <ion-item *ngFor="let img of images">
-      <ion-thumbnail slot="start">
-      </ion-thumbnail>
-    </ion-item>
   </ion-list>
 </ion-content>
 
-
-
-<ion-footer>
-  <ion-toolbar color="primary">
-    <ion-button fill="clear" expand="full" color="light" (click)="selectImage()">
-      ASDASDSAKDOSAKDSO
-    </ion-button>
-  </ion-toolbar>
-</ion-footer>
+<input type='file' (change)="onFileChosen($event)" />
+<ion-button (click)="captureImage()">
+  <ion-icon name="camera"></ion-icon>
+</ion-button>

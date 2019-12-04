@@ -7,11 +7,13 @@ import { HttpClient } from '@angular/common/http';
 import { Platform, ActionSheetController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-import { Plugins, CameraResultType, CameraSource, Filesystem } from '@capacitor/core';
+import { Plugins, CameraResultType, CameraSource, FilesystemDirectory, Filesystem, Capacitor } from '@capacitor/core';
+// import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import * as firebase from 'firebase';
 
 
 const STORAGE_KEY = 'my_images';
+// const { Camera, Filesystem } = Plugins;
 
 @Component({
   selector: 'app-profile',
@@ -22,11 +24,12 @@ export class ProfilePage implements OnInit {
 
   profileDetails: string[] = [];
   photo: SafeResourceUrl;
+  selectedImage: string;
 
   constructor(private camera: Camera, private file: File, private Http: HttpClient, private userService: UserServiceService,
-              private plt: Platform, private storage: Storage, private webview: WebView,
-              private actionSheetController: ActionSheetController, private ref: ChangeDetectorRef,
-              private sanitizer: DomSanitizer) { }
+    private plt: Platform, private storage: Storage, private webview: WebView,
+    private actionSheetController: ActionSheetController, private ref: ChangeDetectorRef,
+    private sanitizer: DomSanitizer) { }
   ngOnInit() {
     this.profileDetails = this.userService.getProfileDetails();
   }
@@ -35,57 +38,103 @@ export class ProfilePage implements OnInit {
     this.userService.inputAlert('Update your Names !');
   }
 
-  async selectImage() {
-    const actionSheet = await this.actionSheetController.create({
-      header: "Select your Image",
-      buttons: [{
-        text: "Upload from Library",
-        handler: () => {
-          console.log('DIBUAT DULU ANJING FUNCTIONNYA !!!');
-        }
-      },
-      {
-        text: "Upload from Camera",
-        handler: () => {
-          this.captureImage();
-        }
-      },
-      {
-        text: "Cancel",
-        role: 'cancel'
-      }
-      ]
+  // async selectImage() {
+  //   const actionSheet = await this.actionSheetController.create({
+  //     header: "Select your Image",
+  //     buttons: [{
+  //       text: "<input type='file' (change)='changeListener($event)' #input />Upload from Library",
+  //       handler: () => {
+  //       }
+  //     },
+  //     {
+  //       text: "Upload from Camera",
+  //       handler: () => {
+  //         this.captureImage();
+  //       }
+  //     },
+  //     {
+  //       text: "Cancel",
+  //       role: 'cancel'
+  //     }
+  //     ]
+  //   });
+  //   await actionSheet.present();
+  // }
+
+  onFileChosen(evt: Event) {
+    console.log(evt);
+    const pickedFile = (evt.target as HTMLInputElement).files[0];
+    const fr = new FileReader();
+    var imagestring;
+    fr.onload = () => {
+      const dataUrl = fr.result.toString();
+      this.selectedImage = dataUrl;
+      console.log(this.selectedImage);
+      imagestring = btoa(this.selectedImage);
+    }
+    var storageRef = firebase.storage().ref();
+    var uid = this.userService.getUid();
+    var childRef = storageRef.child(uid + '_profilepicture.jpg');
+    childRef.put(pickedFile).then(() => {
+      return childRef.getDownloadURL().then(downloadURL => {
+        return this.userService.setImage(downloadURL);
+      });
     });
-    await actionSheet.present();
+    fr.readAsDataURL(pickedFile);
+
   }
 
-  async getImage() {
-    const photoInTempStorage = await Filesystem.readFile({ path: originalPhoto.path });
-  }
 
-  captureImage(){
+  captureImage() {
     Plugins.Camera.getPhoto({
-      quality:100,
-      allowEditing:false,
-      resultType:CameraResultType.Base64,
-      source:CameraSource.Camera
-    }).then((imageData)=>{
+      quality: 100,
+      allowEditing: false,
+      resultType: CameraResultType.Base64,
+      source: CameraSource.Camera
+    }).then((imageData) => {
       console.log(imageData);
       var storageRef = firebase.storage().ref();
       var uid = this.userService.getUid();
-      var childRef = storageRef.child( uid + '_profilepicture.jpg');
+      var childRef = storageRef.child(uid + '_profilepicture.jpg');
 
       return childRef
-      .putString(imageData.base64String, 'base64', { contentType: 'image/png' })
-      .then(() => {
-        return childRef.getDownloadURL().then(downloadURL => {
-          return this.userService.setImage(downloadURL);
+        .putString(imageData.base64String, 'base64', { contentType: 'image/png' })
+        .then(() => {
+          return childRef.getDownloadURL().then(downloadURL => {
+            return this.userService.setImage(downloadURL);
+          });
         });
-      });
-    },(Err)=>{
-      alert(JSON.stringify(Err));
+    }, (Err) => {
     });
   }
 
+  async takePhoto() {
+    const options = {
+      quality: 100,
+      allowEditing: false,
+      resultType: CameraResultType.Base64,
+      source: CameraSource.Camera
+    };
+    const originalPhoto = await Plugins.Camera.getPhoto(options);
+    console.log(originalPhoto.path);
+    Filesystem.readFile({
+      path: originalPhoto.path,
+    }).then(
+      result => {
+        let date = new Date(),
+          time = date.getTime(),
+          fileName = time + ".jpeg";
+        var storageRef = firebase.storage().ref();
+        var uid = this.userService.getUid();
+        var childRef = storageRef.child(uid + '_profilepicture.jpg');
 
+        return childRef
+          .putString(originalPhoto.base64String, 'base64', { contentType: 'image/png' })
+          .then(() => {
+            return childRef.getDownloadURL().then(downloadURL => {
+              return this.userService.setImage(downloadURL);
+            });
+          });
+      });
+  }
 }
