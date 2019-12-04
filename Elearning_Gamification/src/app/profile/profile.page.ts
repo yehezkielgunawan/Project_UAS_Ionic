@@ -6,6 +6,10 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { HttpClient } from '@angular/common/http';
 import { Platform, ActionSheetController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
+import { Plugins, CameraResultType, CameraSource, Filesystem } from '@capacitor/core';
+import * as firebase from 'firebase';
+
 
 const STORAGE_KEY = 'my_images';
 
@@ -15,128 +19,72 @@ const STORAGE_KEY = 'my_images';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+
   profileDetails: string[] = [];
-  images = [];
+  photo: SafeResourceUrl;
 
   constructor(private camera: Camera, private file: File, private Http: HttpClient, private userService: UserServiceService,
               private plt: Platform, private storage: Storage, private webview: WebView,
-              private actionSheetController: ActionSheetController, private ref: ChangeDetectorRef) { }
+              private actionSheetController: ActionSheetController, private ref: ChangeDetectorRef,
+              private sanitizer: DomSanitizer) { }
   ngOnInit() {
     this.profileDetails = this.userService.getProfileDetails();
-    this.plt.ready().then(() => {
-       this.loadStoredImages();
-    });
   }
 
   updateName() {
     this.userService.inputAlert('Update your Names !');
   }
 
-  loadStoredImages() {
-    this.storage.get(STORAGE_KEY).then(images => {
-      if (images) {
-        const arr = JSON.parse(images);
-        this.images = [];
-        for (const img of arr) {
-          const filePath = this.file.dataDirectory + img;
-          const resPath = this.pathForImage(filePath);
-          this.images.push({ name: img, path: resPath, filePath: filePath });
-        }
-      }
-    });
-  }
-
-  pathForImage(img){
-    if (img === null){
-      return '';
-    }
-    else {
-      let converted = this.webview.convertFileSrc(img);
-      return converted;
-    }
-  }
-
-  async selectImage(){
+  async selectImage() {
     const actionSheet = await this.actionSheetController.create({
       header: "Select your Image",
       buttons: [{
         text: "Upload from Library",
         handler: () => {
-          this.takePicture(this.camera.PictureSourceType.PHOTOLIBRARY);
+          console.log('DIBUAT DULU ANJING FUNCTIONNYA !!!');
         }
       },
       {
         text: "Upload from Camera",
         handler: () => {
-          this.takePicture(this.camera.PictureSourceType.CAMERA);
+          this.captureImage();
         }
       },
       {
         text: "Cancel",
         role: 'cancel'
       }
-    ]
+      ]
     });
     await actionSheet.present();
   }
 
-  takePicture(sourceType: PictureSourceType) {
-    var options: CameraOptions = {
-      quality: 100,
-      sourceType : sourceType,
-      saveToPhotoAlbum: false,
-      correctOrientation: true,
-    };
+  async getImage() {
+    const photoInTempStorage = await Filesystem.readFile({ path: originalPhoto.path });
+  }
 
-    this.camera.getPicture(options).then(imagePath =>  {
-      var currentName = imagePath.substr(imagePath.lastIndexOf('/') + 1);
-      var correctPath = imagePath.substr(0, imagePath.lastIndexOf('/') + 1);
-      // console.log(correctPath,currentName);
-      this.copyFileToLocalDir(correctPath,currentName, this.createFileName());
+  captureImage(){
+    Plugins.Camera.getPhoto({
+      quality:100,
+      allowEditing:false,
+      resultType:CameraResultType.Base64,
+      source:CameraSource.Camera
+    }).then((imageData)=>{
+      console.log(imageData);
+      var storageRef = firebase.storage().ref();
+      var uid = this.userService.getUid();
+      var childRef = storageRef.child( uid + '_profilepicture.jpg');
+
+      return childRef
+      .putString(imageData.base64String, 'base64', { contentType: 'image/png' })
+      .then(() => {
+        return childRef.getDownloadURL().then(downloadURL => {
+          return this.userService.setImage(downloadURL);
+        });
+      });
+    },(Err)=>{
+      alert(JSON.stringify(Err));
     });
-  }
-
-  copyFileToLocalDir(namePath,currentName,newFileName){
-    console.log(this.file.dataDirectory);
-    this.file.copyFile(namePath,currentName, this.file.dataDirectory, newFileName).then(_=> {
-      console.log("YEY");
-      this.updateStoredImages(newFileName);
-    }, error => {
-      console.log(error);
-    }
-    );
-  }
-
-  updateStoredImages(name){
-    this.storage.get(STORAGE_KEY).then(images => {
-      let arr = JSON.parse(images);
-      if(!arr){
-        let newImages = [name];
-        this.storage.set(STORAGE_KEY,JSON.stringify(newImages));
-      }else{
-        arr.push(name);
-        this.storage.set(STORAGE_KEY,JSON.stringify(arr));
-      }
-
-      let filePath = this.file.dataDirectory + name;
-      let resPath = this.pathForImage(filePath);
-
-      let newEntry = {
-        name: name,
-        path: resPath,
-        filePath: filePath,
-      };
-
-      this.images = [newEntry, ...this.images];
-      this.ref.detectChanges();
-    });
-  }
-
-  createFileName(){
-    var d = new Date(),
-        n = d.getTime(),
-        newFilename = n + '.jpg';
-    return newFilename;
   }
 
 

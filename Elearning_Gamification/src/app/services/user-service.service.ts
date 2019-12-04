@@ -24,6 +24,7 @@ export class UserServiceService {
         password,
         xp: 0,
         train_flag: 0,
+        image: '',
       });
       this.router.navigate(['login']);
       this.presentAlert("Congratulations!", "You are registered. Let's try to login!");
@@ -61,12 +62,17 @@ export class UserServiceService {
     }
   }
 
+  getUid(){
+    return localStorage.getItem('uid');
+  }
+
   getProfileDetails() {
     var localStorageUid = localStorage.getItem('uid');
     var detailProfile : string[] = [];
     firebase.database().ref('/users/' + localStorageUid).once('value').then(snapshot => {
       detailProfile['name'] = snapshot.val().nickname;
       detailProfile['xp'] = snapshot.val().xp;
+      detailProfile['image'] = snapshot.val().image;
       // detailProfile['pict'] = snapshot.val().picture;
     });
     return detailProfile;
@@ -117,5 +123,12 @@ export class UserServiceService {
     await alert.present();
 
     return alert.inputs;
+  }
+
+  setImage(downloadUrl){
+    var localStorageUid = localStorage.getItem('uid');
+    firebase.database().ref('/users/' + localStorageUid).update({ image: downloadUrl });
+    this.presentAlert('Update Success !', 'You have updated your image');
+    this.router.navigate(['home']);
   }
 }
