@@ -61,11 +61,20 @@ export class UserServiceService {
   getProfileDetails() {
     var localStorageUid = localStorage.getItem('uid');
     var detailProfile: string[] = [];
+    var level;
     firebase.database().ref('/users/' + localStorageUid).once('value').then(snapshot => {
       detailProfile['name'] = snapshot.val().nickname;
       detailProfile['xp'] = snapshot.val().xp;
       detailProfile['image'] = snapshot.val().image;
-      // detailProfile['pict'] = snapshot.val().picture;
+      level = snapshot.val().level;
+      if (level == 1) {
+        detailProfile['level'] = 'Newbie';
+      } else if (level == 2) {
+        detailProfile['level'] = 'Intermediate';
+      } else if (level >= 3) {
+        detailProfile['level'] = 'Professor';
+      }
+      detailProfile['pict'] = snapshot.val().picture;
     });
     return detailProfile;
   }

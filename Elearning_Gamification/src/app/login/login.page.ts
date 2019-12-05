@@ -29,7 +29,8 @@ export class LoginPage implements OnInit {
   }
 
   async login(email, password) {
-    this.userService.login_firebase(email, password);
+    await this.userService.login_firebase(email, password);
+    console.log(firebase.auth().currentUser.uid);
     localStorage.setItem('uid', firebase.auth().currentUser.uid);
   }
 

@@ -3,6 +3,7 @@ import { FIREBASE_CONFIG, snapshotToArray } from './../environment';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-home',
@@ -11,16 +12,24 @@ import * as firebase from 'firebase';
 })
 export class HomePage implements OnInit{
 
+  profileDetails: string[] = [];
   constructor(
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private userService: UserServiceService
   ) { }
+
 
   ngOnInit() {
     var loggedIn = localStorage.getItem('uid');
     if(loggedIn == null){
       this.router.navigate(['login']);
     }
+    this.profileDetails = this.userService.getProfileDetails();
+  } 
+
+  ionViewWillEnter(){
+   this.ngOnInit();
   }
 
   async logout() {
