@@ -9,7 +9,9 @@
 
   <ion-button (click)="updateName()">Update Names !</ion-button>
 </ion-content>
-
+<ion-list>
+    <img [src]="profileDetails['image']">
+</ion-list>
 <input type='file' (change)="onFileChosen($event)" />
 <ion-button (click)="captureImage()">
   <ion-icon name="camera"></ion-icon>
