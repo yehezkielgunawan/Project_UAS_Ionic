@@ -18,14 +18,14 @@
         <div class="profile-container">
           <ion-col>
             <div class="avatar">
-              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+              <img src="{{profileDetails['image']}}" />
             </div>
           </ion-col>
           <ion-col>
             <div class="stats">
-              <p class="vline">myName</p>
-              <p class="vline">Professor</p>
-              <p>xp100</p>
+              <p class="vline">{{ profileDetails['name'] }}</p>
+              <p class="vline">{{ profileDetails['level'] }}</p>
+              <p>Exp : {{ profileDetails['xp'] }}</p>
             </div>
           </ion-col>
         </div>
@@ -37,16 +37,14 @@
       <div class="none">
         <ion-row>
           <ion-col size="6">
-                <pre>{{ items | json }}</pre>
     
                 <p> Profesor</p>
-                <p *ngFor="let item of score" > Training Point : {{ item.score }}</p>
           </ion-col>
         </ion-row>
       </div>
       <ion-row>
         <ion-col size="6">
-          <ion-card class="card-item" [routerLink]="['/game']">
+          <ion-card class="card-item" [routerLink]="['/battle']">
               <img src="../assets/icon/undraw_may_the_force_bgdm.png">
               <h4 class="ion-text-center">Battle</h4>
           </ion-card>

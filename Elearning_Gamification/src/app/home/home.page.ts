@@ -1,20 +1,37 @@
 import { AlertController } from '@ionic/angular';
 import { FIREBASE_CONFIG, snapshotToArray } from './../environment';
 import { Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
+  profileDetails: string[] = [];
   constructor(
     private router: Router,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private userService: UserServiceService
   ) { }
+
+
+  ngOnInit() {
+    var loggedIn = localStorage.getItem('uid');
+    if(loggedIn == null){
+      this.router.navigate(['login']);
+    }
+    this.profileDetails = this.userService.getProfileDetails();
+    console.log(this.profileDetails);
+  } 
+
+  ionViewWillEnter(){
+   this.ngOnInit();
+  }
 
   async logout() {
     await firebase.auth().signOut().then(function () {
@@ -23,7 +40,8 @@ export class HomePage {
       console.log(error.message);
     });
     this.router.navigate(['login']);
-    console.log('Yay logout!');
+    localStorage.clear();
+    this.presentAlert('Logout Success !', 'Please log in back to use this applications');
   }
 
   async presentAlert(header, message) {

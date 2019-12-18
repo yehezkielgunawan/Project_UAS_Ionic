@@ -22,10 +22,16 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
+    var loggedIn = localStorage.getItem('uid');
+    if(loggedIn){
+      this.router.navigate(['home']);
+    }
   }
 
   async login(email, password) {
-    this.userService.login_firebase(email, password);
+    await this.userService.login_firebase(email, password);
+    console.log(firebase.auth().currentUser.uid);
+    localStorage.setItem('uid', firebase.auth().currentUser.uid);
   }
 
 

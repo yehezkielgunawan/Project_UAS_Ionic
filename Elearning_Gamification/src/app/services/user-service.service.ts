@@ -18,7 +18,13 @@ export class UserServiceService {
       firebase.database().ref('users/' + user_data.uid).set({
         email,
         nickname,
-        password
+        password,
+        xp: 0,
+        level: 1,
+        image: '',
+        train_flag: 0,
+        messageContent: false,
+        messageFrom: '',
       });
       this.router.navigate(['login']);
       console.log('Yay, registered to Firebase!!! HAHAHA');
@@ -50,6 +56,39 @@ export class UserServiceService {
     }
   }
 
+  getUid() {
+    return localStorage.getItem('uid');
+  }
+
+  getProfileDetails() {
+    var localStorageUid = localStorage.getItem('uid');
+    var detailProfile: string[] = [];
+    var level;
+    firebase.database().ref('/users/' + localStorageUid).once('value').then(snapshot => {
+      detailProfile['name'] = snapshot.val().nickname;
+      detailProfile['xp'] = snapshot.val().xp;
+      detailProfile['image'] = snapshot.val().image;
+      level = snapshot.val().level;
+      if (level == 1) {
+        detailProfile['level'] = 'Newbie';
+      } else if (level == 2) {
+        detailProfile['level'] = 'Intermediate';
+      } else if (level >= 3) {
+        detailProfile['level'] = 'Professor';
+      }
+      detailProfile['pict'] = snapshot.val().picture;
+    });
+    console.log(detailProfile);
+    return detailProfile;
+  }
+
+  updateName(name) {
+    var localStorageUid = localStorage.getItem('uid');
+    firebase.database().ref('/users/' + localStorageUid).update({ nickname: name });
+    this.presentAlert('Update Success !', 'You have updated your name');
+    this.router.navigate(['home']);
+  }
+
   async presentAlert(header, message) {
     const alert = await this.alertController.create({
       header,
@@ -58,5 +97,42 @@ export class UserServiceService {
     });
 
     await alert.present();
+  }
+
+  async inputAlert(header) {
+    const alert = await this.alertController.create({
+      header,
+      inputs: [
+        {
+          name: 'nickname',
+          type: 'text',
+          placeholder: 'Input your new nickname',
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+        },
+        {
+          text: 'OK !',
+          handler: data => {
+            this.updateName(data.nickname);
+          },
+        },
+
+      ]
+    });
+
+    await alert.present();
+
+    return alert.inputs;
+  }
+
+  setImage(downloadUrl) {
+    var localStorageUid = localStorage.getItem('uid');
+    firebase.database().ref('/users/' + localStorageUid).update({ image: downloadUrl });
+    this.presentAlert('Update Success !', 'You have updated your image');
+    this.router.navigate(['home']);
   }
 }
