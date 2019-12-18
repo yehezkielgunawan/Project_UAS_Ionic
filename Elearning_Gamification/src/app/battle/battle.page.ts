@@ -123,6 +123,9 @@ export class BattlePage implements OnInit {
         firebase.database().ref('users/' + from).update({
           messageContent: 'accepted',
         });
+        firebase.database().ref('users/' + user.uid).update({
+          messageContent: 'accepted',
+        });
       }
     });
   }
@@ -131,7 +134,7 @@ export class BattlePage implements OnInit {
   showQuestion() {
     console.log('Score : ' + this.score);
     this.questionNumber++;
-    this.soal = this.trainingService.generateQuestionRatusan();
+    this.soal = this.trainingService.generateQuestionSatuan();
     const operatorPicker = Math.floor(Math.random() * (4 - 0) + 0);
     this.operator = this.operatorList[operatorPicker];
     this.generateAnswer(this.operator);
@@ -162,8 +165,8 @@ export class BattlePage implements OnInit {
   }
 
   async submitAnswer(hasil) {
-    firebase.database().ref('users/' + this.uid).update({ messageContent: 'false' });
-    var roomId, finishCount, winner, otherScore, exp, trainingCount, level;
+    firebase.database().ref('users/' + this.uid).update({ messageContent: '' });
+    var roomId, finishCount, winner, otherScore, exp, trainingCount, level, player1, player2;
     console.log('Answer : ' + this.answer);
     console.log('Hasil : ' + hasil);
     if (this.answer == hasil) {
@@ -174,21 +177,23 @@ export class BattlePage implements OnInit {
     await firebase.database().ref('users/' + this.uid).once('value').then(snapshot1 => {
       roomId = (snapshot1.val() && snapshot1.val().invited);
     });
-    await firebase.database().ref('/rooms/' + roomId).once('value').then(snapshot2 => {
+    await firebase.database().ref('/rooms/' + roomId).once('value').then(async snapshot2 => {
       finishCount = (snapshot2.val() && snapshot2.val().finish);
       finishCount++;
       firebase.database().ref('rooms/' + roomId).update({ finish: finishCount });
       winner = (snapshot2.val() && snapshot2.val().winner);
+      player1 = (snapshot2.val() && snapshot2.val().player1);
+      player2 = (snapshot2.val() && snapshot2.val().player2);
       otherScore = (snapshot2.val() && snapshot2.val().score);
       if (winner != this.uid && otherScore < this.score) {
         firebase.database().ref('rooms/' + roomId).update({ winner: this.uid });
         firebase.database().ref('rooms/' + roomId).update({ score: this.score });
       }
       if (finishCount >= 2) {
-        firebase.database().ref('rooms/' + roomId).once('value').then(snapshot3 => {
+        await firebase.database().ref('rooms/' + roomId).once('value').then(snapshot3 => {
           winner = (snapshot3.val() && snapshot3.val().winner);
         });
-        firebase.database().ref('users/' + winner).once('value').then(snapshot4 => {
+        await firebase.database().ref('users/' + winner).once('value').then(snapshot4 => {
           exp = (snapshot4.val() && snapshot4.val().xp);
           console.log(exp);
           level = (snapshot4.val() && snapshot4.val().level);
@@ -199,11 +204,17 @@ export class BattlePage implements OnInit {
             level++;
             trainingCount = 0;
           }
+          if (winner) {
+            firebase.database().ref('users/' + winner).update({ xp: exp });
+            firebase.database().ref('users/' + winner).update({ train_flag: trainingCount });
+            firebase.database().ref('users/' + winner).update({ level: level });
+          }
+          firebase.database().ref('users/' + player1).update({ messageFrom: '' });
+          firebase.database().ref('users/' + player1).update({ invited: '' });
+          firebase.database().ref('users/' + player2).update({ messageFrom: '' });
+          firebase.database().ref('users/' + player2).update({ invited: '' });
+          firebase.database().ref('rooms/' + roomId).update({ respond: 'finished' });
         });
-        firebase.database().ref('users/' + winner).update({ xp: exp });
-        firebase.database().ref('users/' + winner).update({ train_flag: trainingCount });
-        firebase.database().ref('users/' + winner).update({ level: level });
-        this.presentAlert('Training Done', 'You get 5 experiences');
       }
     });
     this.presentAlert('Nice !', 'You just finished the battle. Please wait for your friends !');
@@ -222,7 +233,7 @@ export class BattlePage implements OnInit {
         });
         firebase.database().ref('/users/' + this.uid).update({
           invited: '',
-          messageContent: 'false',
+          messageContent: '',
           messageFrom: '',
         });
       }
