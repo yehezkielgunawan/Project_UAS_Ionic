@@ -24,6 +24,10 @@ const routes: Routes = [
     path: 'battle',
     loadChildren: () => import('./battle/battle.module').then( m => m.BattlePageModule)
   },
+  {
+    path: 'history',
+    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule)
+  },
 ];
 
 @NgModule({
