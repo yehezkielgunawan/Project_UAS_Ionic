@@ -40,9 +40,13 @@ export class BattlePage implements OnInit {
         return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
           console.log(snapshot.val().messageContent);
           this.content = (snapshot.val() && snapshot.val().messageContent);
-          if (this.content == 'true') {
+          if (this.content == 'received') {
             console.log('ANJING');
             this.receiveAlert('You got a battle invitation !', 'Do you want accept it?');
+          }
+          else if (this.content == 'sent') {
+            console.log('KUCING');
+            this.presentAlert('Please wait for your friends !', '');
           }
         });
       }
@@ -51,6 +55,16 @@ export class BattlePage implements OnInit {
 
   requestBattle() {
     this.sendAlert('Let\'s battle against your friend !!');
+  }
+
+  async presentAlert(header, message) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 
   async receiveAlert(header, message) {
@@ -76,7 +90,18 @@ export class BattlePage implements OnInit {
   }
 
   startBattle() {
-
+    var invited;
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        firebase.database().ref('users/' + user.uid).on('value', snapshot => {
+          invited = (snapshot.val() && snapshot.val().invited);
+        });
+        firebase.database().ref('rooms/' + invited).update({
+          respond: 'true',
+        });
+      }
+    });
+    this.showQuestion();
   }
 
 
@@ -169,8 +194,12 @@ export class BattlePage implements OnInit {
         let masuk = firebase.database().ref('rooms/').push();
         firebase.database().ref('/users/' + element.key).update({
           invited: masuk.key,
-          messageContent: 'true',
+          messageContent: 'received',
           messageFrom: this.uid,
+        });
+        firebase.database().ref('/users/' + this.uid).update({
+          invited: masuk.key,
+          messageContent: 'sent',
         });
         masuk.set({
           player1: this.uid,
