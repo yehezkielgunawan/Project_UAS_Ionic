@@ -36,41 +36,41 @@ export class BattlePage implements OnInit {
     this.readRespond();
   }
 
-  readMessage() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        console.log(user);
-        return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
-          console.log(snapshot.val().messageContent);
-          this.content = (snapshot.val() && snapshot.val().messageContent);
-          if (this.content == 'received') {
-            console.log('ANJING');
-            this.receiveAlert('You got a battle invitation !', 'Do you want accept it?');
-          }
-          else if (this.content == 'sent') {
-            console.log('KUCING');
-            this.presentAlert('Please wait for your friends !', '');
-          }
-        });
-      }
-    });
+  async readMessage() {
+    var user = await firebase.auth().currentUser;
+    if (user) {
+      console.log(user);
+      return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
+        console.log(snapshot.val().messageContent);
+        this.content = (snapshot.val() && snapshot.val().messageContent);
+        if (this.content == 'received') {
+          console.log('ANJING');
+          this.receiveAlert('You got a battle invitation !', 'Do you want accept it?');
+        }
+        else if (this.content == 'sent') {
+          console.log('KUCING');
+          this.presentAlert('Please wait for your friends !', '');
+        }
+      });
+    }
+
   }
 
-  readRespond() {
-    firebase.auth().onAuthStateChanged(user => {
-      if (user) {
-        return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
-          var invited = (snapshot.val() && snapshot.val().invited);
-          firebase.database().ref('rooms/' + invited).on('value', snapshot => {
-            var room = (snapshot.val() && snapshot.val().respond);
-            if (room == 'true') {
-              this.presentAlert('Challange Accepted !', 'Let the battle begin');
-              this.showQuestion();
-            }
-          });
+  async readRespond() {
+    var user = await firebase.auth().currentUser;
+    if (user) {
+      return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
+        var invited = (snapshot.val() && snapshot.val().invited);
+        firebase.database().ref('rooms/' + invited).on('value', snapshot => {
+          var room = (snapshot.val() && snapshot.val().respond);
+          if (room == 'true') {
+            this.presentAlert('Challange Accepted !', 'Let the battle begin');
+            this.showQuestion();
+          }
         });
-      }
-    });
+      });
+    }
+
   }
 
   requestBattle() {
@@ -131,8 +131,8 @@ export class BattlePage implements OnInit {
   showQuestion() {
     console.log('Score : ' + this.score);
     this.questionNumber++;
-    this.soal = this.trainingService.generateQuestionSatuan();
-    const operatorPicker = 0;
+    this.soal = this.trainingService.generateQuestionRatusan();
+    const operatorPicker = Math.floor(Math.random() * (4 - 0) + 0);
     this.operator = this.operatorList[operatorPicker];
     this.generateAnswer(this.operator);
     return this.soal;
@@ -161,7 +161,8 @@ export class BattlePage implements OnInit {
     this.showQuestion();
   }
 
-  submitAnswer(hasil) {
+  async submitAnswer(hasil) {
+    firebase.database().ref('users/' + this.uid).update({ messageContent: 'false' });
     var roomId, finishCount, winner, otherScore, exp, trainingCount, level;
     console.log('Answer : ' + this.answer);
     console.log('Hasil : ' + hasil);
@@ -170,10 +171,10 @@ export class BattlePage implements OnInit {
       this.score++;
     }
     console.log(this.score);
-    firebase.database().ref('users/' + this.uid).once('value').then(snapshot1 => {
+    await firebase.database().ref('users/' + this.uid).once('value').then(snapshot1 => {
       roomId = (snapshot1.val() && snapshot1.val().invited);
     });
-    firebase.database().ref('/rooms/' + roomId).once('value').then(snapshot2 => {
+    await firebase.database().ref('/rooms/' + roomId).once('value').then(snapshot2 => {
       finishCount = (snapshot2.val() && snapshot2.val().finish);
       finishCount++;
       firebase.database().ref('rooms/' + roomId).update({ finish: finishCount });
@@ -204,7 +205,7 @@ export class BattlePage implements OnInit {
         this.presentAlert('Training Done', 'You get 5 experiences');
       }
     });
-
+    this.presentAlert('Nice !', 'You just finished the battle. Please wait for your friends !');
     this.router.navigate(['home']);
   }
 
