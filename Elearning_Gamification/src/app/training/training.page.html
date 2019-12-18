@@ -1,16 +1,35 @@
-<ion-header>
-    <ion-toolbar>
-      <ion-title>training</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
+
+  <div class="body flex-container">
+    <div class="header">
+      <ion-row>
+        <div class="navbar">
+          <ion-col text-center>
+            <p>Training</p>
+          </ion-col>
+        </div>
+      </ion-row>
+    </div>
+  </div>
+
   <ion-content>
-    <p>{{soal[0]}} {{operator}} {{soal[1]}}</p><ion-input [(ngModel)]="hasil" name="hasil"></ion-input>
-    <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none"> 
-      <!-- ^ Tambah jadi 10 ^ -->
-      <ion-button (click)="submitTraining(hasil)">Submit</ion-button>
-    </ng-template>
-    <ng-template #none>
-      <ion-button (click)="nextPage(hasil)">Next</ion-button>
-    </ng-template>
+    <div class="soal">
+      <p>{{soal[0]}} {{operator}} {{soal[1]}}</p>
+    </div>
+    <div class="content">
+      
+      <div class="actionField">
+        <ion-input class="form" [(ngModel)]="hasil" name="hasil"></ion-input>
+
+          <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none"> 
+            <!-- ^ Tambah jadi 10 ^ -->
+          </ng-template>
+          <ng-template>
+            <ion-button class="next" (click)="nextPage(hasil)" #none>Next</ion-button>
+          </ng-template>
+
+        <ion-button (click)="submitTraining(hasil)">Submit</ion-button>
+      </div>
+    </div>
+
+
   </ion-content>

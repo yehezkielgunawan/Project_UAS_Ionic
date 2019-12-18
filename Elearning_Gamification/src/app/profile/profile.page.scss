@@ -22,6 +22,7 @@
             width: 100%;
             font-weight: 900;
             font-size: 18px;
+
           }
           .profile-container{
             //   background-color: whitesmoke;
@@ -69,10 +70,7 @@
           height: 20vh;
         }
 
-
         .fileInput{
-            margin-left: 20%;
-            font-size: large;
             display: none;
         }
 
@@ -99,7 +97,6 @@
           background-image: url(src/assets/icon/undraw_nature_fun_n9lv.svg);
           border-bottom-left-radius: 15%;
           border-bottom-right-radius: 15%;
-          
           width: 100%;
       
           .navbar{
@@ -112,18 +109,6 @@
             font-weight: 900;
             font-size: 28px;
       
-            .menu{
-                margin: 20px 30px;
-              pre{
-                width: 45px;
-                height: 3px;
-                background-color: white;
-                margin: 12px 0;
-              }   
-            }
-            p{
-             padding-right: 15%;
-            }
           }
           .profile-container{
             //   background-color: whitesmoke;
@@ -161,20 +146,22 @@
             }
           }
         }
+    }
     
         .card-item{
             img{
-              height: 16px !important;
-            }
+                object-fit: contain;
+                height: 30vh;
+              }
 
             .fileInput{
-                margin-left: 20%;
-                font-size: large;
                 display: none;
             }
 
             height: fit-content;
+        }
+
+        .latest{
             margin-bottom: 10vh;
         }
-    }
   }
