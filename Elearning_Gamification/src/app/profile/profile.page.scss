@@ -61,24 +61,26 @@
             }
           }
         }
-      
-      .none{
-        display: none;
       }
-    }
+      
     .card-item{
         img{
           object-fit: contain;
           height: 20vh;
         }
-        height: fit-content;
+
 
         .fileInput{
             margin-left: 20%;
             font-size: large;
+            display: none;
         }
+
+        height: fit-content;
     } 
- 
+    .latest{
+        margin-bottom: 10vh;
+    }
 }
 
   
@@ -159,16 +161,19 @@
             }
           }
         }
-      
-        .none{
-          display: none;
-        }
     
         .card-item{
             img{
               height: 16px !important;
             }
-            height: 32px !important;
+
+            .fileInput{
+                margin-left: 20%;
+                font-size: large;
+                display: none;
+            }
+
+            height: fit-content;
             margin-bottom: 10vh;
         }
     }
