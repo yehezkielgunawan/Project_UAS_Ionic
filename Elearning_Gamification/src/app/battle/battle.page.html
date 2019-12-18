@@ -12,7 +12,7 @@
       <p>{{soal[0]}} {{operator}} {{soal[1]}}</p><ion-input [(ngModel)]="hasil" name="hasil"></ion-input>
      <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none"> 
       <!-- ^ Tambah jadi 10 ^ -->
-      <ion-button (click)="submitBattle(hasil)">Submit</ion-button>
+      <ion-button (click)="submitAnswer(hasil)">Submit</ion-button>
     </ng-template>
     <ng-template #none>
       <ion-button (click)="nextPage(hasil)">Next</ion-button>
