@@ -31,6 +31,7 @@ export class BattlePage implements OnInit {
       this.items = snapshotToArray(resp);
     });
     this.readMessage();
+    this.readRespond();
   }
 
   readMessage() {
