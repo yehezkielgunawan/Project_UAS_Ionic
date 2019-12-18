@@ -1,13 +1,10 @@
-
 <ion-content>
   <div class="body flex-container">
     <div class="header">
       <ion-row>
         <div class="navbar">
           <div class="menu">
-            <pre></pre>
-            <pre></pre>
-            <pre></pre>
+            <ion-icon [routerLink]="['/history']" ios="ios-time" md="md-time"></ion-icon>
           </div>
           <ion-col text-center>
             <p>goleran app</p>
@@ -30,43 +27,43 @@
           </ion-col>
         </div>
       </ion-row>
-    
+
     </div>
 
     <ion-grid>
       <div class="none">
         <ion-row>
           <ion-col size="6">
-    
-                <p> Profesor</p>
+
+            <p> Profesor</p>
           </ion-col>
         </ion-row>
       </div>
       <ion-row>
         <ion-col size="6">
           <ion-card class="card-item" [routerLink]="['/battle']">
-              <img src="../assets/icon/undraw_may_the_force_bgdm.png">
-              <h4 class="ion-text-center">Battle</h4>
+            <img src="../assets/icon/undraw_may_the_force_bgdm.png">
+            <h4 class="ion-text-center">Battle</h4>
           </ion-card>
         </ion-col>
         <ion-col size="6">
           <ion-card class="card-item" [routerLink]="['/training']">
-              <img src="../assets/icon/undraw_ideation_2a64.png">
-              <h4 class="ion-text-center">Training</h4>
+            <img src="../assets/icon/undraw_ideation_2a64.png">
+            <h4 class="ion-text-center">Training</h4>
           </ion-card>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="6">
           <ion-card class="card-item" [routerLink]="['/profile']">
-              <img src="../assets/icon/undraw_profile_6l1l.png">
-              <h4 class="ion-text-center">Profile</h4>
+            <img src="../assets/icon/undraw_profile_6l1l.png">
+            <h4 class="ion-text-center">Profile</h4>
           </ion-card>
         </ion-col>
         <ion-col size="6">
           <ion-card class="card-item" (click)="logout()">
-              <img src="../assets/icon/undraw_Login_v483.png">
-              <h4 class="ion-text-center">Logout</h4>
+            <img src="../assets/icon/undraw_Login_v483.png">
+            <h4 class="ion-text-center">Logout</h4>
           </ion-card>
         </ion-col>
       </ion-row>

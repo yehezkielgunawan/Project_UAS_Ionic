@@ -681,6 +681,69 @@ const findCheckedOption = (el, tagName) => {
 
 /***/ }),
 
+/***/ "./src/app/services/training.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/services/training.service.ts ***!
+  \**********************************************/
+/*! exports provided: TrainingService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrainingService", function() { return TrainingService; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let TrainingService = class TrainingService {
+    constructor() {
+        this.a = [1, 2];
+    }
+    generateQuestionSatuan() {
+        let temp;
+        this.a[0] = Math.floor(Math.random() * 1000000 % 10);
+        this.a[1] = Math.floor(Math.random() * 1000000 % 10);
+        if (this.a[0] < this.a[1]) {
+            temp = this.a[0];
+            this.a[0] = this.a[1];
+            this.a[1] = temp;
+        }
+        return this.a;
+    }
+    generateQuestionPuluhan() {
+        let temp;
+        this.a[0] = Math.floor(Math.random() * 1000000 % 100);
+        this.a[1] = Math.floor(Math.random() * 1000000 % 100);
+        if (this.a[0] < this.a[1]) {
+            temp = this.a[0];
+            this.a[0] = this.a[1];
+            this.a[1] = temp;
+        }
+        return this.a;
+    }
+    generateQuestionRatusan() {
+        let temp;
+        this.a[0] = Math.floor(Math.random() * 1000000 % 1000);
+        this.a[1] = Math.floor(Math.random() * 1000000 % 1000);
+        if (this.a[0] < this.a[1]) {
+            temp = this.a[0];
+            this.a[0] = this.a[1];
+            this.a[1] = temp;
+        }
+        return this.a;
+    }
+};
+TrainingService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
+    }),
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+], TrainingService);
+
+
+
+/***/ }),
+
 /***/ "./src/app/services/user-service.service.ts":
 /*!**************************************************!*\
   !*** ./src/app/services/user-service.service.ts ***!
@@ -720,6 +783,8 @@ let UserServiceService = class UserServiceService {
                     level: 1,
                     image: '',
                     train_flag: 0,
+                    messageContent: false,
+                    messageFrom: '',
                 });
                 this.router.navigate(['login']);
                 console.log('Yay, registered to Firebase!!! HAHAHA');
@@ -777,6 +842,7 @@ let UserServiceService = class UserServiceService {
             }
             detailProfile['pict'] = snapshot.val().picture;
         });
+        console.log(detailProfile);
         return detailProfile;
     }
     updateName(name) {

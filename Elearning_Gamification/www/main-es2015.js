@@ -434,6 +434,53 @@ module.exports = webpackAsyncContext;
 
 /***/ }),
 
+/***/ "./node_modules/@ionic/pwa-elements/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./node_modules/@ionic/pwa-elements/dist/esm lazy ^\.\/.*\.entry\.js$ include: \.entry\.js$ exclude: \.system\.entry\.js$ namespace object ***!
+  \*************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./pwa-camera-modal-instance.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm/pwa-camera-modal-instance.entry.js",
+		78
+	],
+	"./pwa-camera-modal.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm/pwa-camera-modal.entry.js",
+		79
+	],
+	"./pwa-camera.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm/pwa-camera.entry.js",
+		80
+	],
+	"./pwa-toast.entry.js": [
+		"./node_modules/@ionic/pwa-elements/dist/esm/pwa-toast.entry.js",
+		81
+	]
+};
+function webpackAsyncContext(req) {
+	if(!__webpack_require__.o(map, req)) {
+		return Promise.resolve().then(function() {
+			var e = new Error("Cannot find module '" + req + "'");
+			e.code = 'MODULE_NOT_FOUND';
+			throw e;
+		});
+	}
+
+	var ids = map[req], id = ids[0];
+	return __webpack_require__.e(ids[1]).then(function() {
+		return __webpack_require__(id);
+	});
+}
+webpackAsyncContext.keys = function webpackAsyncContextKeys() {
+	return Object.keys(map);
+};
+webpackAsyncContext.id = "./node_modules/@ionic/pwa-elements/dist/esm lazy recursive ^\\.\\/.*\\.entry\\.js$ include: \\.entry\\.js$ exclude: \\.system\\.entry\\.js$";
+module.exports = webpackAsyncContext;
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/index.js!./src/app/app.component.html":
 /*!**************************************************************!*\
   !*** ./node_modules/raw-loader!./src/app/app.component.html ***!
@@ -478,7 +525,15 @@ const routes = [
     },
     {
         path: 'training',
-        loadChildren: () => __webpack_require__.e(/*! import() | training-training-module */ "training-training-module").then(__webpack_require__.bind(null, /*! ./training/training.module */ "./src/app/training/training.module.ts")).then(m => m.TrainingPageModule)
+        loadChildren: () => Promise.all(/*! import() | training-training-module */[__webpack_require__.e("common"), __webpack_require__.e("training-training-module")]).then(__webpack_require__.bind(null, /*! ./training/training.module */ "./src/app/training/training.module.ts")).then(m => m.TrainingPageModule)
+    },
+    {
+        path: 'battle',
+        loadChildren: () => Promise.all(/*! import() | battle-battle-module */[__webpack_require__.e("common"), __webpack_require__.e("battle-battle-module")]).then(__webpack_require__.bind(null, /*! ./battle/battle.module */ "./src/app/battle/battle.module.ts")).then(m => m.BattlePageModule)
+    },
+    {
+        path: 'history',
+        loadChildren: () => Promise.all(/*! import() | history-history-module */[__webpack_require__.e("common"), __webpack_require__.e("history-history-module")]).then(__webpack_require__.bind(null, /*! ./history/history.module */ "./src/app/history/history.module.ts")).then(m => m.HistoryPageModule)
     },
 ];
 let AppRoutingModule = class AppRoutingModule {
@@ -690,10 +745,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser-dynamic */ "./node_modules/@angular/platform-browser-dynamic/fesm2015/platform-browser-dynamic.js");
 /* harmony import */ var _app_app_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/app.module */ "./src/app/app.module.ts");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _ionic_pwa_elements_loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ionic/pwa-elements/loader */ "./node_modules/@ionic/pwa-elements/loader/index.es2017.mjs");
 
 
 
 
+
+Object(_ionic_pwa_elements_loader__WEBPACK_IMPORTED_MODULE_4__["defineCustomElements"])(window);
 if (_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].production) {
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["enableProdMode"])();
 }
