@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-  <ng-template [ngIf]="content == 'false'" [ngIfElse]="battleon">
+  <ng-template [ngIf]="content == ''" [ngIfElse]="battleon">
     <ion-button (click)="requestBattle()"></ion-button>
   </ng-template>
   <ng-template #battleon>

@@ -53,6 +53,22 @@ export class BattlePage implements OnInit {
     });
   }
 
+  readRespond(){
+    firebase.auth().onAuthStateChanged(user => {
+      if (user) {
+        return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
+          var invited = (snapshot.val() && snapshot.val().invited);
+          firebase.database().ref('rooms/' + invited).on('value', snapshot => {
+            var room = (snapshot.val() && snapshot.val().respond);
+            if(room == 'true'){
+              this.presentAlert('Challange Accepted !', 'Let the battle begin');
+            }
+          });
+        });
+      }
+    });
+  }
+
   requestBattle() {
     this.sendAlert('Let\'s battle against your friend !!');
   }
@@ -90,15 +106,19 @@ export class BattlePage implements OnInit {
   }
 
   startBattle() {
-    var invited;
+    var invited,from;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         firebase.database().ref('users/' + user.uid).on('value', snapshot => {
           invited = (snapshot.val() && snapshot.val().invited);
+          from = (snapshot.val() && snapshot.val().messageFrom);
         });
         firebase.database().ref('rooms/' + invited).update({
           respond: 'true',
         });
+        firebase.database().ref('users/' + from).update({
+          messageContent: 'accepted',
+        })
       }
     });
     this.showQuestion();
