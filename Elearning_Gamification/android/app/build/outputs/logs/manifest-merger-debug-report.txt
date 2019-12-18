@@ -1,0 +1,433 @@
+-- Merging decision tree log ---
+provider#android.support.v4.content.FileProvider
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:34:9-42:20
+	android:grantUriPermissions
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:38:13-47
+	android:authorities
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:36:13-64
+	android:exported
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:37:13-37
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:35:13-67
+manifest
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+MERGED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-36:12
+MERGED from [com.android.support:design:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7b1ff134da673d6b1f80c599977488f6/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/eda568f53bbeecd73d684d1ff2bc5e6b/AndroidManifest.xml:17:1-22:12
+MERGED from [:capacitor-cordova-android-plugins] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-15:12
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:17:1-37:12
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:17:1-47:12
+MERGED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:2:1-19:12
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/26193caf5c40bca181222311e7df8239/AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/187f045ef43601e38ebfc9a84585caa1/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/c078426303e4525981acbeb7dbf76242/AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/0cd8b7444b80841a40694dba3ea6be6f/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/9112baf1ac303c497024c871a054f21b/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/e7fdc575d9cb49db092bbcfdd29618cc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customtabs:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/customtabs-28.0.0.aar/e100acb5d4a879afa591b5c29749cd30/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/1b35a56fe376b507c81d1deb76e9e711/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/afad008a39831b5c72d0f53de6de0f66/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/99b4b5356d3d92e32abc1e5ff9252364/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/1ac5709ff061ead718d1cf52291f94fc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/088720885bb90488e27c03394016173a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/b688266064c4bb054a05c07cf2c5f8a5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/cc601bb92a97a30decb2b24d46dcf8e6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/116da9e452a7fb541cd441c8ea1879ef/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/6675bea8a235136854ccebe98f1ee774/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/cf60525ef4ee8402c32de199ce7d3b9e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7422ad9209ff5aebaff6201757e7ec4a/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/2784db1c5dc3b9ef6ed8477a4058285f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/56a24ca00e2ce8c1ee31aadd426fb6b6/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/3f7610a93c146ef08543e26d21de6918/AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/ee307f34faf6be9350f20623afccad8b/AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/393749c1b5c8fc57b9550dd02b273a9c/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/81d5ebd640e1e7e70f4b4afc5f52cb3d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/ae4584dfb94ab0e545f019f0b65d8dc2/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/ada0e2b51296a0b51fb816775f3bf89d/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/2ebfc204ed352101211f1b8e0de55406/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/a2b51ae30601b40d24291e78103b6c0e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fafdb9686515d518f7093a8c009bd9c5/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8be0ddfb8fa0179693b66740a3125fdc/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/67bc56bd4e9b3fdbcc756ec748661da4/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/1c8a551b7f1de5a63c86cb7951bb5974/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/89d1a49aa703f4aa9c21766720dd7b9f/AndroidManifest.xml:17:1-22:12
+MERGED from [org.apache.cordova:framework:7.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/framework-7.0.0.aar/1971f4109b45d92b068fb8f619497a46/AndroidManifest.xml:20:1-27:12
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+	package
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:3:5-31
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:1-63:12
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:5:5-43:19
+MERGED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
+MERGED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:15:5-34:19
+MERGED from [com.android.support:design:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7b1ff134da673d6b1f80c599977488f6/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7b1ff134da673d6b1f80c599977488f6/AndroidManifest.xml:22:5-20
+MERGED from [:capacitor-cordova-android-plugins] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-13:19
+MERGED from [:capacitor-cordova-android-plugins] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:5-13:19
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:22:5-35:19
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:28:5-45:19
+MERGED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:11:5-17:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/26193caf5c40bca181222311e7df8239/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/26193caf5c40bca181222311e7df8239/AndroidManifest.xml:7:5-8:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/187f045ef43601e38ebfc9a84585caa1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/187f045ef43601e38ebfc9a84585caa1/AndroidManifest.xml:7:5-20
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/c078426303e4525981acbeb7dbf76242/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/c078426303e4525981acbeb7dbf76242/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/0cd8b7444b80841a40694dba3ea6be6f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/0cd8b7444b80841a40694dba3ea6be6f/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/3f7610a93c146ef08543e26d21de6918/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/3f7610a93c146ef08543e26d21de6918/AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/ee307f34faf6be9350f20623afccad8b/AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/ee307f34faf6be9350f20623afccad8b/AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/3f7610a93c146ef08543e26d21de6918/AndroidManifest.xml:22:18-91
+	android:supportsRtl
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:11:9-40
+activity#io.ionic.starter.MainActivity
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:13:9-32:20
+	android:label
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:16:13-56
+	android:launchMode
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:18:13-44
+	android:configChanges
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:14:13-90
+	android:theme
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:17:13-62
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:15:13-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:20:13-23:29
+action#android.intent.action.MAIN
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:22:27-74
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.BROWSABLE+category:name:android.intent.category.DEFAULT+data:scheme:@string/custom_url_scheme
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:25:13-30:29
+action#android.intent.action.VIEW
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:26:17-69
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:26:25-66
+category#android.intent.category.DEFAULT
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:27:17-76
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:27:27-73
+category#android.intent.category.BROWSABLE
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:28:17-78
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:28:27-75
+data
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:29:17-68
+	android:scheme
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:29:23-65
+uses-permission#android.permission.INTERNET
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:47:5-67
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:23:5-67
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:47:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:49:5-79
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:49:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:50:5-81
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:50:22-78
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:52:5-81
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:52:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:53:5-79
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:53:22-76
+uses-feature#android.hardware.location.gps
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:54:5-66
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:54:19-63
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:56:5-79
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:22:5-79
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:56:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:59:5-65
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:59:22-62
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:61:5-71
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:61:22-68
+uses-permission#android.permission.MODIFY_AUDIO_SETTINGS
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:62:5-79
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:62:22-77
+uses-sdk
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+MERGED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7b1ff134da673d6b1f80c599977488f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/design-28.0.0.aar/7b1ff134da673d6b1f80c599977488f6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/eda568f53bbeecd73d684d1ff2bc5e6b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/eda568f53bbeecd73d684d1ff2bc5e6b/AndroidManifest.xml:20:5-44
+MERGED from [:capacitor-cordova-android-plugins] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [:capacitor-cordova-android-plugins] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/capacitor-cordova-android-plugins/build/intermediates/library_manifest/debug/AndroidManifest.xml:8:5-10:41
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/26193caf5c40bca181222311e7df8239/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-iid-interop:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-interop-16.0.1.aar/26193caf5c40bca181222311e7df8239/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/187f045ef43601e38ebfc9a84585caa1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-tasks-16.0.1.aar/187f045ef43601e38ebfc9a84585caa1/AndroidManifest.xml:5:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/c078426303e4525981acbeb7dbf76242/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-measurement-connector:17.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-measurement-connector-17.0.1.aar/c078426303e4525981acbeb7dbf76242/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/0cd8b7444b80841a40694dba3ea6be6f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-stats:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-stats-16.0.1.aar/0cd8b7444b80841a40694dba3ea6be6f/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/9112baf1ac303c497024c871a054f21b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/9112baf1ac303c497024c871a054f21b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/e7fdc575d9cb49db092bbcfdd29618cc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/e7fdc575d9cb49db092bbcfdd29618cc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/customtabs-28.0.0.aar/e100acb5d4a879afa591b5c29749cd30/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customtabs:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/customtabs-28.0.0.aar/e100acb5d4a879afa591b5c29749cd30/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/1b35a56fe376b507c81d1deb76e9e711/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-28.0.0.aar/1b35a56fe376b507c81d1deb76e9e711/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/afad008a39831b5c72d0f53de6de0f66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/afad008a39831b5c72d0f53de6de0f66/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/99b4b5356d3d92e32abc1e5ff9252364/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/99b4b5356d3d92e32abc1e5ff9252364/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/1ac5709ff061ead718d1cf52291f94fc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/1ac5709ff061ead718d1cf52291f94fc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/088720885bb90488e27c03394016173a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/088720885bb90488e27c03394016173a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/b688266064c4bb054a05c07cf2c5f8a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/transition-28.0.0.aar/b688266064c4bb054a05c07cf2c5f8a5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/cc601bb92a97a30decb2b24d46dcf8e6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/cc601bb92a97a30decb2b24d46dcf8e6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/116da9e452a7fb541cd441c8ea1879ef/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/116da9e452a7fb541cd441c8ea1879ef/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/6675bea8a235136854ccebe98f1ee774/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/6675bea8a235136854ccebe98f1ee774/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/cf60525ef4ee8402c32de199ce7d3b9e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/cf60525ef4ee8402c32de199ce7d3b9e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7422ad9209ff5aebaff6201757e7ec4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/7422ad9209ff5aebaff6201757e7ec4a/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/2784db1c5dc3b9ef6ed8477a4058285f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/2784db1c5dc3b9ef6ed8477a4058285f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/56a24ca00e2ce8c1ee31aadd426fb6b6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/56a24ca00e2ce8c1ee31aadd426fb6b6/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/3f7610a93c146ef08543e26d21de6918/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/3f7610a93c146ef08543e26d21de6918/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/ee307f34faf6be9350f20623afccad8b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/ee307f34faf6be9350f20623afccad8b/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/393749c1b5c8fc57b9550dd02b273a9c/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/393749c1b5c8fc57b9550dd02b273a9c/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/81d5ebd640e1e7e70f4b4afc5f52cb3d/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/81d5ebd640e1e7e70f4b4afc5f52cb3d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/ae4584dfb94ab0e545f019f0b65d8dc2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/ae4584dfb94ab0e545f019f0b65d8dc2/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/ada0e2b51296a0b51fb816775f3bf89d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/ada0e2b51296a0b51fb816775f3bf89d/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/2ebfc204ed352101211f1b8e0de55406/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/2ebfc204ed352101211f1b8e0de55406/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/a2b51ae30601b40d24291e78103b6c0e/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/a2b51ae30601b40d24291e78103b6c0e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fafdb9686515d518f7093a8c009bd9c5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/fafdb9686515d518f7093a8c009bd9c5/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8be0ddfb8fa0179693b66740a3125fdc/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/8be0ddfb8fa0179693b66740a3125fdc/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/67bc56bd4e9b3fdbcc756ec748661da4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/67bc56bd4e9b3fdbcc756ec748661da4/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/1c8a551b7f1de5a63c86cb7951bb5974/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/1c8a551b7f1de5a63c86cb7951bb5974/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/89d1a49aa703f4aa9c21766720dd7b9f/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/89d1a49aa703f4aa9c21766720dd7b9f/AndroidManifest.xml:20:5-44
+MERGED from [org.apache.cordova:framework:7.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/framework-7.0.0.aar/1971f4109b45d92b068fb8f619497a46/AndroidManifest.xml:25:5-44
+MERGED from [org.apache.cordova:framework:7.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/framework-7.0.0.aar/1971f4109b45d92b068fb8f619497a46/AndroidManifest.xml:25:5-44
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:23:9-51
+	android:targetSdkVersion
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:39:13-41:64
+	android:resource
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:41:17-51
+	android:name
+		ADDED from /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/android/app/src/main/AndroidManifest.xml:40:17-67
+uses-feature#android.hardware.camera
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-13:36
+	android:required
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:13:9-33
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:12:9-47
+service#com.getcapacitor.plugin.background.BackgroundTaskService
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:16:9-18:40
+	android:exported
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:18:13-37
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:17:13-84
+receiver#com.getcapacitor.plugin.notification.TimedNotificationPublisher
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:9-100
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:20:19-97
+receiver#com.getcapacitor.plugin.notification.NotificationDismissReceiver
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:9-101
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:21:19-98
+meta-data#firebase_messaging_auto_init_enabled
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:23:9-25:37
+	android:value
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:25:13-34
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:24:13-64
+service#com.getcapacitor.CapacitorFirebaseMessagingService
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:27:9-33:19
+	android:stopWithTask
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:29:13-41
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:28:13-78
+intent-filter#action:name:com.google.firebase.MESSAGING_EVENT
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:30:13-32:29
+action#com.google.firebase.MESSAGING_EVENT
+ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:17-78
+	android:name
+		ADDED from [:capacitor-android] /Users/kevinchristian/Documents/Mobile Cross Platform/UAS/Project_UAS_Ionic/Elearning_Gamification/node_modules/@capacitor/android/capacitor/build/intermediates/library_manifest/debug/AndroidManifest.xml:31:25-75
+service#com.google.firebase.messaging.FirebaseMessagingService
+ADDED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:28:9-34:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:30:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-messaging:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-messaging-18.0.0.aar/02622030a24c986d20f1575e924b0425/AndroidManifest.xml:29:13-82
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:24:5-68
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:24:22-65
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:26:5-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:26:22-79
+service#com.google.firebase.components.ComponentDiscoveryService
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:29:9-35:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:31:13-37
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:30:13-84
+meta-data#com.google.firebase.components:com.google.firebase.iid.Registrar
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:32:13-34:85
+	android:value
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:34:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:33:17-96
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:37:9-44:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:39:13-36
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:40:13-73
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:38:13-78
+intent-filter#action:name:com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:41:13-43:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:42:17-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:18.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-iid-18.0.0.aar/ebb30eb90b6ebc6723b14dd86ecb3656/AndroidManifest.xml:42:25-78
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:12:9-16:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:14:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:15:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:16:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:17.0.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/firebase-common-17.0.0.aar/e345f2b5549409b8db630aa0f156411f/AndroidManifest.xml:13:13-77
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/51c19d0832eb588b023eea897a6a0ce5/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:16.0.1] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/49e4eafd69b3e79e5dcaf36d8bd77b2c/AndroidManifest.xml:24:13-58
+meta-data#android.support.VERSION
+ADDED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/c0d5098bce209dd48d0d61026dd7de24/AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:support-v4:26.1.0] /Users/kevinchristian/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/2ad613bb0b26b834088fdc7935270fe3/AndroidManifest.xml:27:13-51

@@ -5,10 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ng-template [ngIf]="content == 'false'" [ngIfElse]="none">
+  <ng-template [ngIf]="content == 'false'" [ngIfElse]="battleon">
     <ion-button (click)="requestBattle()"></ion-button>
   </ng-template>
-  <ng-template #none>
-    <ion-button (click)="nextPage(hasil)">Next</ion-button>
+  <ng-template #battleon>
+      <p>{{soal[0]}} {{operator}} {{soal[1]}}</p><ion-input [(ngModel)]="hasil" name="hasil"></ion-input>
+     <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none"> 
+      <!-- ^ Tambah jadi 10 ^ -->
+      <ion-button (click)="submitBattle(hasil)">Submit</ion-button>
+    </ng-template>
+    <ng-template #none>
+      <ion-button (click)="nextPage(hasil)">Next</ion-button>
+    </ng-template>
   </ng-template>
 </ion-content>

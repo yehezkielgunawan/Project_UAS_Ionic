@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { UserServiceService } from '../services/user-service.service';
+import { TrainingService } from '../services/training.service';
 import * as firebase from 'firebase';
 import { snapshotToArray } from '../environment';
 
@@ -11,9 +12,16 @@ import { snapshotToArray } from '../environment';
 })
 export class BattlePage implements OnInit {
 
+  soal: number[] = [1, 2];
+  operator;
+  score = 0;
+  answer: number;
+  questionNumber = 0;
+  operatorList = ['+', '-', '*', '/'];
+  hasil: any;
   items = [];
   userRef = firebase.database().ref('users/');
-  constructor(private alertController: AlertController, private userService: UserServiceService) {
+  constructor(private alertController: AlertController, private userService: UserServiceService, private trainingService: TrainingService) {
   }
   uid = this.userService.getUid();
   content = '';
@@ -68,7 +76,42 @@ export class BattlePage implements OnInit {
   }
 
   startBattle() {
-    
+
+  }
+
+
+  showQuestion() {
+    console.log('Score : ' + this.score);
+    this.questionNumber++;
+    // const uid = firebase.auth().currentUser.uid;
+    this.soal = this.trainingService.generateQuestionSatuan();
+    const operatorPicker = 0;
+    this.operator = this.operatorList[operatorPicker];
+    this.generateAnswer(this.operator);
+    return this.soal;
+  }
+
+  generateAnswer(operator) {
+    if (operator === '+') {
+      this.answer = this.soal[0] + this.soal[1];
+    } else if (operator === '-') {
+      this.answer = this.soal[0] - this.soal[1];
+    } else if (operator === 'x') {
+      this.answer = this.soal[0] * this.soal[1];
+    } else if (operator === '/') {
+      this.answer = this.soal[0] / this.soal[1];
+    }
+    return this.answer;
+  }
+
+  nextPage(hasil) {
+    console.log('Answer : ' + this.answer);
+    console.log('Hasil : ' + hasil);
+    if (this.answer == hasil) {
+      console.log('Jawaban Benar');
+      this.score++;
+    }
+    this.ngOnInit();
   }
 
   cancelBattle() {
