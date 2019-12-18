@@ -13,6 +13,12 @@ export class UserServiceService {
 
   async register_firebase(email, nickname, password, cpassword) {
     try {
+      if (password != cpassword) {
+        throw ("Password did not match");
+      }
+      if (email == null || nickname == null || password == null || cpassword == null) {
+        throw ("All form must be filled");
+      }
       await firebase.auth().createUserWithEmailAndPassword(email, password);
       let user_data = firebase.auth().currentUser;
       firebase.database().ref('users/' + user_data.uid).set({
@@ -30,6 +36,11 @@ export class UserServiceService {
       console.log('Yay, registered to Firebase!!! HAHAHA');
     } catch (error) {
       console.log(error.message);
+      if (error == "Password did not match") {
+        this.presentAlert(error, 'Please fill it with correct and match password');
+      } else if (error == "All form must be filled") {
+        this.presentAlert(error, "Please fill all forms");
+      }
     }
   }
 
