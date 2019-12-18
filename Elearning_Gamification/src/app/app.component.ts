@@ -1,4 +1,6 @@
+import { FIREBASE_CONFIG } from './environment';
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -10,35 +12,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
-
-  public appPages=[
-    {
-      title: 'Home',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: 'Training',
-      url: '/training',
-      icon: 'book'
-    },
-    {
-      title: 'Battle',
-      url: '/game',
-      icon: 'ios-medal'
-    },
-    {
-      title: 'Profile',
-      url: '/profile',
-      icon: 'md-person'
-    },
-    {
-      title: 'Logout',
-      url: '/auth',
-      icon: 'exit'
-    }
-  ];
-
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
@@ -52,5 +25,7 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+
+    firebase.initializeApp(FIREBASE_CONFIG);
   }
 }

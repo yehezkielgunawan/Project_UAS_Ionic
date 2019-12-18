@@ -1,42 +1,62 @@
-import { ScoreService, Score } from './../services/score.service';
+import { AlertController } from '@ionic/angular';
+import { FIREBASE_CONFIG, snapshotToArray } from './../environment';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { LoadingController } from '@ionic/angular';
-import { Observable } from 'rxjs';
+import * as firebase from 'firebase';
+import { UserServiceService } from '../services/user-service.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage implements OnInit{
 
-  score: Score[];
-  a: Score[];
-  public items: Observable<any[]>;
+  profileDetails: string[] = [];
+  constructor(
+    private router: Router,
+    private alertController: AlertController,
+    private userService: UserServiceService
+  ) { }
 
-
-  constructor(public scoreService: ScoreService, public db: AngularFirestore, public loadingController: LoadingController) {}
 
   ngOnInit() {
-    this.scoreService.getScores().subscribe(res => {
-      this.score = res;
-    });
+    var loggedIn = localStorage.getItem('uid');
+    if(loggedIn == null){
+      this.router.navigate(['login']);
+    }
+    this.profileDetails = this.userService.getProfileDetails();
+  } 
+
+  ionViewWillEnter(){
+   this.ngOnInit();
   }
 
-  async showScore() {
-    const loading = await this.loadingController.create({
-      message: 'Loading Score...'
+  async logout() {
+    await firebase.auth().signOut().then(function () {
+      console.log('Logout from firebase auth')
+    }).catch(function (error) {
+      console.log(error.message);
     });
-    await loading.present();
-    this.scoreService.getScores().subscribe(res => {
-      loading.dismiss();
-      this.score = res;
-    });
-    return this.score;
+    this.router.navigate(['login']);
+    localStorage.clear();
+    this.presentAlert('Logout Success !', 'Please log in back to use this applications');
   }
 
+  async presentAlert(header, message) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
+<<<<<<< HEAD
   logScrolling($event){
     console.log($event);
   }
+=======
+>>>>>>> 6393b0a991ab1b053dbfdc4106dcab08dbecdd29
 }

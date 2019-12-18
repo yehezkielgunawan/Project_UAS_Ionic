@@ -1,6 +1,12 @@
-import { ScoreService } from './../services/score.service';
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { AngularFirestore } from '@angular/fire/firestore';
+=======
+import { Router } from '@angular/router';
+import { TrainingService } from '../services/training.service';
+import * as firebase from 'firebase';
+import { AlertController } from '@ionic/angular';
+>>>>>>> 6393b0a991ab1b053dbfdc4106dcab08dbecdd29
 
 @Component({
   selector: 'app-training',
@@ -9,91 +15,144 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class TrainingPage implements OnInit {
 
-  constructor(public db: AngularFirestore, public scoreService: ScoreService) {}
-  jumlah: number;
-  a: number[] = [1, 2];
-  hasil: any;
+  constructor(private router: Router, private trainingService: TrainingService, private alertController: AlertController) { }
+
+  soal: number[] = [1, 2];
+  operator;
   score = 0;
-  page = 1;
+  answer: number;
+  questionNumber = 0;
+  operatorList = ['+', '-', '*', '/'];
+  hasil: any;
+  exp: number = 0;
+  level: number = 0;
+  localStorageUid;
 
   ngOnInit() {
-    this.a = this.randomNumberSatuan();
-    this.jumlah = this.penjumlahan(this.a);
-  }
-
-  randomNumberSatuan() {
-    let temp;
-    this.a[0] = Math.floor(Math.random() * 1000000 % 10);
-    this.a[1] = Math.floor(Math.random() * 1000000 % 10);
-    if (this.a[0] < this.a[1]) {
-      temp = this.a[0];
-      this.a[0] = this.a[1];
-      this.a[1] = temp;
-    }
-    return this.a;
-  }
-
-  penjumlahan(a) {
-    this.jumlah = a[0] + a[1];
-    return this.jumlah;
-  }
-
-  pengurangan(a) {
-    this.jumlah = a[0] + a[1];
-    return this.jumlah;
-  }
-
-  perkalian(a) {
-    this.jumlah = a[0] + a[1];
-    return this.jumlah;
-  }
-
-  pembagian(a) {
-    this.jumlah = a[0] + a[1];
-    return this.jumlah;
-  }
-
-  randomNumberPuluhan() {
-    return Math.floor(Math.random() * 1000000 % 100);
-  }
-  randomNumberRatusan() {
-    return Math.floor(Math.random() * 1000000 % 1000);
-  }
-
-  kirimhasil(hasil) {
-    if (this.jumlah == hasil) {
-      this.score++;
-    }
-    const scores = this.tarikhasil();
-    console.log(scores);
-    if (scores == null) {
-      return this.db.collection('score_training').add({
-        score: this.score
-      });
+    this.showQuestion();
+    let loggedin = localStorage.getItem('uid');
+    if (loggedin == null) {
+      this.router.navigate(['login']);
     }
     else {
-      return this.db.collection('score_training').doc('dOQXV7RUb8f1eyTBFtP5').set({
-        score: this.score
-      },{merge:true});
+      this.localStorageUid = loggedin;
     }
   }
 
-  tarikhasil(){
-    let scores;
-    this.scoreService.getScores().subscribe(res => {
-      scores = res;
+  showQuestion() {
+    console.log('Score : ' + this.score);
+    this.questionNumber++;
+    // const uid = firebase.auth().currentUser.uid;
+    let xp;
+    firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
+      xp = (snapshot.val() && snapshot.val().xp);
+      if (xp <= 100) {
+        this.soal = this.trainingService.generateQuestionSatuan();
+        const operatorPicker = 0;
+        this.operator = this.operatorList[operatorPicker];
+      } else if (xp <= 200) {
+        this.soal = this.trainingService.generateQuestionPuluhan();
+        const operatorPicker = Math.floor(Math.random() * (2 - 0) + 0);
+        this.operator = this.operatorList[operatorPicker];
+      } else if (xp <= 300) {
+        this.soal = this.trainingService.generateQuestionRatusan();
+        const operatorPicker = Math.floor(Math.random() * (4 - 0) + 0);
+        this.operator = this.operatorList[operatorPicker];
+      }
+      this.generateAnswer(this.operator);
+      return this.soal;
     });
-    return scores.score;
   }
 
-  nextpage(hasil){
-    if(this.jumlah == hasil) {
+  generateAnswer(operator) {
+    if (operator === '+') {
+      this.answer = this.soal[0] + this.soal[1];
+    } else if (operator === '-') {
+      this.answer = this.soal[0] - this.soal[1];
+    } else if (operator === 'x') {
+      this.answer = this.soal[0] * this.soal[1];
+    } else if (operator === '/') {
+      this.answer = this.soal[0] / this.soal[1];
+    }
+    return this.answer;
+  }
+
+  nextPage(hasil) {
+    console.log('Answer : ' + this.answer);
+    console.log('Hasil : ' + hasil);
+    if (this.answer == hasil) {
+      console.log('Jawaban Benar');
       this.score++;
     }
-    this.page++;
-    console.log('s : '+this.score);
-    console.log('p : '+this.page);
     this.ngOnInit();
   }
 
+  submitTraining(hasil) {
+    console.log('Answer : ' + this.answer);
+    console.log('Hasil : ' + hasil);
+    if (this.answer == hasil) {
+      console.log('Jawaban Benar');
+      this.score++;
+    }
+    console.log(this.score);
+    // const uid = firebase.auth().currentUser.uid;
+    if (this.score >= 1) { //tambah jadi 5
+      if (this.score == 1) { //tambah jadi 10
+        firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
+          var trainingCount = (snapshot.val() && snapshot.val().train_flag);
+          console.log(trainingCount);
+          if (trainingCount < 3) {
+            console.log('MASUK COK !');
+            this.exp = (snapshot.val() && snapshot.val().xp);
+            this.level = (snapshot.val() && snapshot.val().level);
+            this.exp += 10;
+            trainingCount++;
+            if (this.exp >= 100) {
+              this.exp -= 100;
+              this.level++;
+              trainingCount = 0;
+            }
+            firebase.database().ref('users/' + this.localStorageUid).update({ xp: this.exp });
+            firebase.database().ref('users/' + this.localStorageUid).update({ train_flag: trainingCount });
+            firebase.database().ref('users/' + this.localStorageUid).update({ level: this.level });
+            this.presentAlert('Training Done', 'You get 10 experiences');
+          }
+          else {
+            this.presentAlert('Training Done', 'You get nothing because of training limit ! Please Battle with your friends');
+          }
+        });
+      } else {
+        firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
+          var trainingCount = (snapshot.val() && snapshot.val().train_flag);
+          if (trainingCount < 3) {
+            this.exp = (snapshot.val() && snapshot.val().xp);
+            this.exp += 5;
+            trainingCount++;
+            if (this.exp >= 100) {
+              this.exp -= 100;
+              this.level++;
+              trainingCount = 0;
+            }
+            firebase.database().ref('users/' + this.localStorageUid).update({ xp: this.exp });
+            firebase.database().ref('users/' + this.localStorageUid).update({ train_flag: trainingCount });
+            firebase.database().ref('users/' + this.localStorageUid).update({ level: this.level });
+            this.presentAlert('Training Done', 'You get 5 experiences');
+          } else {
+            this.presentAlert('Training Done', 'You get nothing because of training limit ! Please battle with your friends');
+          }
+        });
+      }
+    }
+    this.router.navigate(['home']);
+  }
+
+  async presentAlert(header, message) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
 }

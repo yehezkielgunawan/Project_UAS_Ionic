@@ -1,5 +1,6 @@
 
 <ion-content>
+<<<<<<< HEAD
   <div class="body flex-containe">
     <div class="header">
       <div class="navbar">
@@ -22,42 +23,70 @@
 
     <ion-grid>
       <div class="none">
+=======
+  <div class="body flex-container">
+    <div class="header">
+>>>>>>> 6393b0a991ab1b053dbfdc4106dcab08dbecdd29
       <ion-row>
-        <ion-col size="6">
-            <img src="https://img.icons8.com/flat_round/128/000000/uefa-euro-trophy.png">
-        </ion-col>
-        <ion-col size="6">
-              <pre>{{ items | json }}</pre>
-  
-              <p> Profesor</p>
-              <p *ngFor="let item of score" > Training Point : {{ item.score }}</p>
-        </ion-col>
+        <div class="navbar">
+          <div class="menu">
+            <pre></pre>
+            <pre></pre>
+            <pre></pre>
+          </div>
+          <ion-col text-center>
+            <p>goleran app</p>
+          </ion-col>
+        </div>
       </ion-row>
+      <ion-row>
+        <div class="profile-container">
+          <ion-col>
+            <div class="avatar">
+              <img src="{{profileDetails['image']}}" />
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="stats">
+              <p class="vline">{{ profileDetails['name'] }}</p>
+              <p class="vline">{{ profileDetails['level'] }}</p>
+              <p>Exp : {{ profileDetails['xp'] }}</p>
+            </div>
+          </ion-col>
+        </div>
+      </ion-row>
+<<<<<<< HEAD
       </div>
+=======
+    
+    </div>
+
+    <ion-grid>
+>>>>>>> 6393b0a991ab1b053dbfdc4106dcab08dbecdd29
       <ion-row>
         <ion-col size="6">
-          <ion-card [routerLink]="['/game']">
-              <img src="https://img.icons8.com/ios-filled/128/000000/battle.png">
+          <ion-card class="card-item" [routerLink]="['/game']">
+              <img src="../assets/icon/undraw_may_the_force_bgdm.png">
               <h4 class="ion-text-center">Battle</h4>
           </ion-card>
         </ion-col>
         <ion-col size="6">
-          <ion-card [routerLink]="['/training']">
-              <img src="https://img.icons8.com/officel/128/000000/courses.png">
+          <ion-card class="card-item" [routerLink]="['/training']">
+              <img src="../assets/icon/undraw_ideation_2a64.png">
               <h4 class="ion-text-center">Training</h4>
           </ion-card>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="6">
-          <ion-card [routerLink]="['/profile']">
-              <img src="https://img.icons8.com/officel/128/000000/user.png">
+          <ion-card class="card-item" [routerLink]="['/profile']">
+              <img src="../assets/icon/undraw_profile_6l1l.png">
               <h4 class="ion-text-center">Profile</h4>
           </ion-card>
         </ion-col>
         <ion-col size="6">
-          <ion-card [routerLink]="['/login']">
-              <img src="https://img.icons8.com/cute-clipart/128/000000/exit.png">
+          <ion-card class="card-item" (click)="logout()">
+              <img src="../assets/icon/undraw_Login_v483.png">
               <h4 class="ion-text-center">Logout</h4>
           </ion-card>
         </ion-col>

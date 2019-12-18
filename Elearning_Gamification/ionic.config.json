@@ -1,5 +1,7 @@
 {
-  "name": "GoleranApp",
-  "integrations": {},
+  "name": "Elearning_Gamification",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
