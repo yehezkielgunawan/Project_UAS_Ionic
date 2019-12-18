@@ -59,9 +59,9 @@ export class BattlePage implements OnInit {
   async readRespond() {
     var user = await firebase.auth().currentUser;
     if (user) {
-      return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
+      return firebase.database().ref('users/' + user.uid).once('value', snapshot => {
         var invited = (snapshot.val() && snapshot.val().invited);
-        firebase.database().ref('rooms/' + invited).on('value', snapshot => {
+        firebase.database().ref('rooms/' + invited).once('value', snapshot => {
           var room = (snapshot.val() && snapshot.val().respond);
           if (room == 'true') {
             this.presentAlert('Challange Accepted !', 'Let the battle begin');
@@ -190,6 +190,7 @@ export class BattlePage implements OnInit {
         });
         firebase.database().ref('users/' + winner).once('value').then(snapshot4 => {
           exp = (snapshot4.val() && snapshot4.val().xp);
+          console.log(exp);
           level = (snapshot4.val() && snapshot4.val().level);
           trainingCount = (snapshot4.val() && snapshot4.val().train_flag);
           exp += 15;
