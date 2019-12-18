@@ -26,6 +26,7 @@ export class HomePage implements OnInit{
       this.router.navigate(['login']);
     }
     this.profileDetails = this.userService.getProfileDetails();
+    console.log(this.profileDetails);
   } 
 
   ionViewWillEnter(){

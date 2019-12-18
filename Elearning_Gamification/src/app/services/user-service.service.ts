@@ -23,6 +23,8 @@ export class UserServiceService {
         level: 1,
         image: '',
         train_flag: 0,
+        messageContent: false,
+        messageFrom: '',
       });
       this.router.navigate(['login']);
       console.log('Yay, registered to Firebase!!! HAHAHA');
@@ -76,6 +78,7 @@ export class UserServiceService {
       }
       detailProfile['pict'] = snapshot.val().picture;
     });
+    console.log(detailProfile);
     return detailProfile;
   }
 

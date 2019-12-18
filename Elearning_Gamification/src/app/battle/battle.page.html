@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>battle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ng-template [ngIf]="content == 'false'" [ngIfElse]="none">
+    <ion-button (click)="requestBattle()"></ion-button>
+  </ng-template>
+  <ng-template #none>
+    <ion-button (click)="nextPage(hasil)">Next</ion-button>
+  </ng-template>
+</ion-content>
