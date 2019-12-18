@@ -55,7 +55,9 @@
               order: 1;
               margin-top: 5vh;
               img{
-                width: 15vh;
+                object-fit: cover;
+                width: 20vh;
+                height: 20vh;
                 border-radius: 50%;
                 margin-left: 5vh;
               }
@@ -141,12 +143,14 @@
             border-bottom-right-radius: 15%;
             
             .avatar{
+              order: 1;
               img{
-                width: 18vh;
+                object-fit: cover;
+                width: 20vh;
+                height: 20vh;
                 border-radius: 50%;
                 margin-left: 5vh;
               }
-              order: 1;
             }
   
             .stats{

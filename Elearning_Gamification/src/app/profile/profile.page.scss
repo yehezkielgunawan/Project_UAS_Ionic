@@ -1,0 +1,175 @@
+
+@media only screen and (max-device-width: 600px) {
+    /* For portrait layouts only */
+    .body{
+        position: inherit;
+      
+        .header{
+          height: 35vh;
+          margin: 0 !important;
+          background-color: rgb(38, 187, 236);
+          background-image: url(src/assets/icon/undraw_nature_fun_n9lv.svg);
+          border-bottom-left-radius: 20%;
+          border-bottom-right-radius: 20%;
+          width: 100%;
+      
+          .navbar{
+            position: fixed;
+            z-index: 999;
+            display: flex;
+            color: white;
+            background-color: rgb(38, 187, 236);
+            width: 100%;
+            font-weight: 900;
+            font-size: 18px;
+          }
+          .profile-container{
+            //   background-color: whitesmoke;
+            //   margin: -5vh 0 0 10%;
+            //   border-radius: 10%;
+            //   height: 8vh;
+            //   width: 80%;  
+            padding: 0 0 0 0;
+            margin-top: 5vh;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: rgba(38, 187, 236, 0.82);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+            
+            .avatar{
+              order: 1;
+              margin-top: 5vh;
+              img{
+                object-fit: cover;
+                width: 20vh;
+                height: 20vh;
+                border-radius: 50%;
+                margin-left: 5vh;
+              }
+            }
+  
+            .stats{
+              margin: 0;
+              margin-top: 5vh;
+              color: white;
+              font-size: 24px;
+              font-weight: 900;
+              flex: 2 0px;
+              order: 2
+            }
+          }
+        }
+      
+      .none{
+        display: none;
+      }
+    }
+    .card-item{
+        img{
+          object-fit: contain;
+          height: 20vh;
+        }
+        height: fit-content;
+
+        .fileInput{
+            margin-left: 20%;
+            font-size: large;
+        }
+    } 
+ 
+}
+
+  
+
+
+
+  @media only screen and (min-device-width: 600px) and (max-device-width: 1024px) {
+    /* For portrait layouts only */
+    .body{
+        position: inherit;
+      
+        .header{
+          height: 35vh;
+          margin: 0 !important;
+          background-color: rgb(38, 187, 236);
+          background-image: url(src/assets/icon/undraw_nature_fun_n9lv.svg);
+          border-bottom-left-radius: 15%;
+          border-bottom-right-radius: 15%;
+          
+          width: 100%;
+      
+          .navbar{
+            position: fixed;
+            z-index: 999;
+            display: flex;
+            color: white;
+            background-color: rgb(38, 187, 236);
+            width: 100%;
+            font-weight: 900;
+            font-size: 28px;
+      
+            .menu{
+                margin: 20px 30px;
+              pre{
+                width: 45px;
+                height: 3px;
+                background-color: white;
+                margin: 12px 0;
+              }   
+            }
+            p{
+             padding-right: 15%;
+            }
+          }
+          .profile-container{
+            //   background-color: whitesmoke;
+            //   margin: -5vh 0 0 10%;
+            //   border-radius: 10%;
+            //   height: 8vh;
+            //   width: 80%;  
+            padding: 0 0 0 0;
+            margin: 9vh 5vh;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: rgba(38, 187, 236, 0.82);
+            border-bottom-left-radius: 15%;
+            border-bottom-right-radius: 15%;
+            
+            .avatar{
+              order: 1;
+              img{
+                object-fit: cover;
+                width: 20vh;
+                height: 20vh;
+                border-radius: 50%;
+                margin-left: 5vh;
+              }
+            }
+  
+            .stats{
+              margin: 0;
+              color: white;
+              font-size: 28px;
+              font-weight: 900;
+              flex: 2 0px;
+              order: 2
+            }
+          }
+        }
+      
+        .none{
+          display: none;
+        }
+    
+        .card-item{
+            img{
+              height: 16px !important;
+            }
+            height: 32px !important;
+            margin-bottom: 10vh;
+        }
+    }
+  }

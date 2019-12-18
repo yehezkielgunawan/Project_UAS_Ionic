@@ -1,18 +1,50 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>profile</ion-title>
-  </ion-toolbar>
-</ion-header>
 
 <ion-content>
-  <p>{{profileDetails['name']}} {{profileDetails['xp']}}</p>
+  <div class="body flex-container">
+    <div class="header">
+      <ion-row>
+        <div class="navbar">
+          <ion-col text-center>
+            <p>Profile</p>
+          </ion-col>
+        </div>
+      </ion-row>
+      <ion-row>
+        <div class="profile-container">
+          <ion-col>
+            <div class="avatar">
+              <img src="{{profileDetails['image']}}" />
+            </div>
+          </ion-col>
+          <ion-col>
+            <div class="stats">
+              <p class="vline">{{ profileDetails['name'] }}</p>
+              <p class="vline">{{ profileDetails['level'] }}</p>
+              <p>Exp : {{ profileDetails['xp'] }}</p>
+            </div>
+          </ion-col>
+        </div>
+      </ion-row>
+    </div>
+  </div>
 
-  <ion-button (click)="updateName()">Update Names !</ion-button>
+  <ion-grid>
+    <ion-row> 
+      <ion-col size="12"> 
+        <ion-card class="card-item" (click)="updateName()">
+          <img src="../assets/icon/undraw_profile_data_mk6k.png">
+          <h4 class="ion-text-center">Change Name</h4>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12"> 
+        <ion-card class="card-item lastest" (click)="captureImage()">
+          <img src="../assets/icon/undraw_camera_mg5h.png">
+          <input type='file' class="fileInput" (change)="onFileChosen($event)"/>
+          <h4 class="ion-text-center">Choose From Gallery or New</h4>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
-<ion-list>
-    <img [src]="profileDetails['image']">
-</ion-list>
-<input type='file' (change)="onFileChosen($event)" />
-<ion-button (click)="captureImage()">
-  <ion-icon name="camera"></ion-icon>
-</ion-button>
