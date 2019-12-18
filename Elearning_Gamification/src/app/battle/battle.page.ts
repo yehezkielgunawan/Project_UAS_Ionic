@@ -4,6 +4,7 @@ import { UserServiceService } from '../services/user-service.service';
 import { TrainingService } from '../services/training.service';
 import * as firebase from 'firebase';
 import { snapshotToArray } from '../environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-battle',
@@ -21,7 +22,8 @@ export class BattlePage implements OnInit {
   hasil: any;
   items = [];
   userRef = firebase.database().ref('users/');
-  constructor(private alertController: AlertController, private userService: UserServiceService, private trainingService: TrainingService) {
+  constructor(private alertController: AlertController, private userService: UserServiceService,
+    private trainingService: TrainingService, private router: Router) {
   }
   uid = this.userService.getUid();
   content = '';
@@ -54,15 +56,16 @@ export class BattlePage implements OnInit {
     });
   }
 
-  readRespond(){
+  readRespond() {
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         return firebase.database().ref('users/' + user.uid).on('value', snapshot => {
           var invited = (snapshot.val() && snapshot.val().invited);
           firebase.database().ref('rooms/' + invited).on('value', snapshot => {
             var room = (snapshot.val() && snapshot.val().respond);
-            if(room == 'true'){
+            if (room == 'true') {
               this.presentAlert('Challange Accepted !', 'Let the battle begin');
+              this.showQuestion();
             }
           });
         });
@@ -107,7 +110,7 @@ export class BattlePage implements OnInit {
   }
 
   startBattle() {
-    var invited,from;
+    var invited, from;
     firebase.auth().onAuthStateChanged(user => {
       if (user) {
         firebase.database().ref('users/' + user.uid).on('value', snapshot => {
@@ -119,17 +122,15 @@ export class BattlePage implements OnInit {
         });
         firebase.database().ref('users/' + from).update({
           messageContent: 'accepted',
-        })
+        });
       }
     });
-    this.showQuestion();
   }
 
 
   showQuestion() {
     console.log('Score : ' + this.score);
     this.questionNumber++;
-    // const uid = firebase.auth().currentUser.uid;
     this.soal = this.trainingService.generateQuestionSatuan();
     const operatorPicker = 0;
     this.operator = this.operatorList[operatorPicker];
@@ -157,7 +158,54 @@ export class BattlePage implements OnInit {
       console.log('Jawaban Benar');
       this.score++;
     }
-    this.ngOnInit();
+    this.showQuestion();
+  }
+
+  submitAnswer(hasil) {
+    var roomId, finishCount, winner, otherScore, exp, trainingCount, level;
+    console.log('Answer : ' + this.answer);
+    console.log('Hasil : ' + hasil);
+    if (this.answer == hasil) {
+      console.log('Jawaban Benar');
+      this.score++;
+    }
+    console.log(this.score);
+    firebase.database().ref('users/' + this.uid).once('value').then(snapshot1 => {
+      roomId = (snapshot1.val() && snapshot1.val().invited);
+    });
+    firebase.database().ref('/rooms/' + roomId).once('value').then(snapshot2 => {
+      finishCount = (snapshot2.val() && snapshot2.val().finish);
+      finishCount++;
+      firebase.database().ref('rooms/' + roomId).update({ finish: finishCount });
+      winner = (snapshot2.val() && snapshot2.val().winner);
+      otherScore = (snapshot2.val() && snapshot2.val().score);
+      if (winner != this.uid && otherScore < this.score) {
+        firebase.database().ref('rooms/' + roomId).update({ winner: this.uid });
+        firebase.database().ref('rooms/' + roomId).update({ score: this.score });
+      }
+      if (finishCount >= 2) {
+        firebase.database().ref('rooms/' + roomId).once('value').then(snapshot3 => {
+          winner = (snapshot3.val() && snapshot3.val().winner);
+        });
+        firebase.database().ref('users/' + winner).once('value').then(snapshot4 => {
+          exp = (snapshot4.val() && snapshot4.val().xp);
+          level = (snapshot4.val() && snapshot4.val().level);
+          trainingCount = (snapshot4.val() && snapshot4.val().train_flag);
+          exp += 15;
+          if (exp >= 100) {
+            exp -= 100;
+            level++;
+            trainingCount = 0;
+          }
+        });
+        firebase.database().ref('users/' + winner).update({ xp: exp });
+        firebase.database().ref('users/' + winner).update({ train_flag: trainingCount });
+        firebase.database().ref('users/' + winner).update({ level: level });
+        this.presentAlert('Training Done', 'You get 5 experiences');
+      }
+    });
+
+    this.router.navigate(['home']);
   }
 
   cancelBattle() {
@@ -226,7 +274,8 @@ export class BattlePage implements OnInit {
           player1: this.uid,
           player2: element.key,
           respond: '',
-          finish: '',
+          winner: '',
+          finish: 0,
           score: 0,
         });
       }
