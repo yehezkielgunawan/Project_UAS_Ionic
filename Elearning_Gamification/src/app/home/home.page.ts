@@ -10,7 +10,7 @@ import { UserServiceService } from '../services/user-service.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage implements OnInit {
 
   profileDetails: string[] = [];
   constructor(
@@ -21,17 +21,17 @@ export class HomePage implements OnInit{
 
 
   ngOnInit() {
-    var loggedIn = localStorage.getItem('uid');
-    if(loggedIn == null){
+    var loggedIn = this.userService.getUid();
+    if (loggedIn == null) {
       this.router.navigate(['login']);
     }
     this.profileDetails = this.userService.getProfileDetails();
     console.log(this.profileDetails);
-  } 
+  }
 
-  // ionViewWillEnter(){
-  //  this.ngOnInit();
-  // }
+  ionViewWillEnter() {
+    this.profileDetails = this.userService.getProfileDetails();
+  }
 
   async logout() {
     await firebase.auth().signOut().then(function () {
