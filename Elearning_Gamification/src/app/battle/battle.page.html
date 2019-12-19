@@ -1,21 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>battle</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="body flex-container">
+  <div class="header">
+    <ion-row>
+      <div class="navbar">
+        <ion-col text-center>
+          <p>Battle</p>
+        </ion-col>
+      </div>
+    </ion-row>
+  </div>
+</div>
 
 <ion-content>
   <ng-template [ngIf]="content == ''" [ngIfElse]="battleon">
     <ion-button (click)="requestBattle()"></ion-button>
   </ng-template>
   <ng-template #battleon>
-      <p>{{soal[0]}} {{operator}} {{soal[1]}}</p><ion-input [(ngModel)]="hasil" name="hasil"></ion-input>
-     <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none"> 
-      <!-- ^ Tambah jadi 10 ^ -->
-      <ion-button (click)="submitAnswer(hasil)">Submit</ion-button>
-    </ng-template>
-    <ng-template #none>
-      <ion-button (click)="nextPage(hasil)">Next</ion-button>
-    </ng-template>
+    <div class="soal">
+      <p>{{soal[0]}} {{operator}} {{soal[1]}}</p>
+    </div>
+
+    <div class="content">
+      <div class="actionField">
+        <ion-input class="form" [(ngModel)]="hasil" name="hasil"></ion-input>
+    
+        <ng-template [ngIf] = "questionNumber >= 1" [ngIfElse]="none"> 
+        <!-- ^ Tambah jadi 10 ^ -->
+        <ion-button (click)="submitAnswer(hasil)">Submit</ion-button>
+        </ng-template>
+        <ng-template #none>
+          <ion-button class="next" (click)="nextPage(hasil)">Next</ion-button>
+        </ng-template>
+      </div>
+    </div>
   </ng-template>
 </ion-content>
