@@ -30,7 +30,7 @@ export class HomePage implements OnInit {
   }
 
   ionViewWillEnter() {
-    this.ngOnInit();
+    this.profileDetails = this.userService.getProfileDetails();
   }
 
   async logout() {
