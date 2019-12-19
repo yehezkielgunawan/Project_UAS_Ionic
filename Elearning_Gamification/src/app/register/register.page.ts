@@ -14,7 +14,7 @@ export class RegisterPage implements OnInit {
   constructor(private router: Router, private userService: UserServiceService) { }
 
   ngOnInit() {
-    var loggedIn = localStorage.getItem('uid');
+    var loggedIn = this.userService.getUid();
     if (loggedIn) {
       this.router.navigate(['home']);
     }
