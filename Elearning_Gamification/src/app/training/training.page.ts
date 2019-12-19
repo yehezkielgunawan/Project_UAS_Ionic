@@ -92,8 +92,8 @@ export class TrainingPage implements OnInit {
     }
     console.log(this.score);
     // const uid = firebase.auth().currentUser.uid;
-    if (this.score >= 1) { //tambah jadi 5
-      if (this.score == 1) { //tambah jadi 10
+    if (this.score >= 5) { //tambah jadi 5
+      if (this.score == 10) { //tambah jadi 10
         firebase.database().ref('/users/' + this.localStorageUid).once('value').then(snapshot => {
           var trainingCount = (snapshot.val() && snapshot.val().train_flag);
           console.log(trainingCount);

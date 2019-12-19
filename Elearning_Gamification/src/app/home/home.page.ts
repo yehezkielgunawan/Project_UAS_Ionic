@@ -22,6 +22,7 @@ export class HomePage implements OnInit {
 
   ngOnInit() {
     var loggedIn = this.userService.getUid();
+    console.log(loggedIn);
     if (loggedIn == null) {
       this.router.navigate(['login']);
     }

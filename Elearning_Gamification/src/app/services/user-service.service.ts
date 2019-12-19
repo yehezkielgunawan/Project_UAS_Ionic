@@ -68,7 +68,9 @@ export class UserServiceService {
   }
 
   getUid() {
-    return localStorage.getItem('uid');
+    let local_uid = localStorage.getItem('uid');
+    console.log(local_uid);
+    return local_uid;
   }
 
   getProfileDetails() {

@@ -22,8 +22,11 @@ export class HistoryPage implements OnInit {
   ngOnInit() {
     this.roomRef.on('value', resp => {
       this.historyItems = snapshotToArray(resp);
-      this.readMyHistory();
     });
+  }
+  
+  ionViewWillEnter(){
+    this.readMyHistory();
   }
 
   async readMyHistory() {
