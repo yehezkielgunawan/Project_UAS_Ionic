@@ -25,6 +25,14 @@
 
         .menu {
           margin: 10px 15px;
+          
+          .history-icon{
+            font-size: xx-large;
+            margin-top: 1vh;
+            transform: rotate(-146deg) scale(-1, 1);
+          }
+
+          
 
           pre {
             width: 25px;

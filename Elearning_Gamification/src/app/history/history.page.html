@@ -1,15 +1,25 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Battle History</ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="body flex-container">
+  <div class="header">
+    <ion-row>
+      <div class="navbar">
+        <ion-col text-center>
+          <p>History</p>
+        </ion-col>
+      </div>
+    </ion-row>
+  </div>
+</div>
 
 <ion-content>
-  <ion-list *ngFor='let history of myHistory'>
-    {{ history.player1 }} vs {{ history.player2 }}
-    <br> Winner : {{ history.winner }}
-  </ion-list>
+  <div class="banner"></div>
+  <div class="list">
+    <ion-list *ngFor='let history of myHistory' [ngStyle]="{'background-color': history.player1 === history.winner ? '#03B263' : '#FF5733'}" >
+      <div class="name">
+        <span>{{ history.player1 }}</span>
+        <span>vs</span> 
+        <span>{{ history.player2 }}</span>
+      </div>
+      <h5>Winner : {{ history.winner }}</h5>
+    </ion-list>
+  </div>
 </ion-content>
