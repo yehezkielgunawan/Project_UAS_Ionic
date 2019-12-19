@@ -10,7 +10,20 @@
         width: 100%;
         font-weight: 900;
         font-size: 18px;
+
+        .menu {
+            margin: 10px 15px;
+            
+            .icon{
+              font-size: xx-large;
+              margin-top: 1vh;
+            }
+        }
+        ion-col{
+            margin-right: 10vh;
+        }
     }
+
 }
 
 .banner{
