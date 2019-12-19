@@ -29,9 +29,9 @@ export class HomePage implements OnInit{
     console.log(this.profileDetails);
   } 
 
-  ionViewWillEnter(){
-   this.ngOnInit();
-  }
+  // ionViewWillEnter(){
+  //  this.ngOnInit();
+  // }
 
   async logout() {
     await firebase.auth().signOut().then(function () {

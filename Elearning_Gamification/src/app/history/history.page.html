@@ -1,12 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>history</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Battle History</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-list *ngFor = 'let history of myHistory'>
-      {{ history.player1 }} vs {{ history.player2 }}
-<br> Winner :       {{ history.winner }}
-    </ion-list>
+  <ion-list *ngFor='let history of myHistory'>
+    {{ history.player1 }} vs {{ history.player2 }}
+    <br> Winner : {{ history.winner }}
+  </ion-list>
 </ion-content>
