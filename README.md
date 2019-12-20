@@ -1,4 +1,5 @@
 # Quick Documentation
+## Make sure you're in **master** branch, because this is the final version of the app
 
 1. git clone `https://github.com/yehezkielgunawan/Project_UAS_Ionic.git`
 2. Go into **Elearning_Gamification** directory
