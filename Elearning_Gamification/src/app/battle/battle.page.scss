@@ -1,0 +1,116 @@
+@media only screen and (max-device-width: 600px) {
+    /* For portrait layouts only */
+
+    .body {
+        position: inherit;
+
+        .navbar {
+            position: fixed;
+            z-index: 999;
+            display: flex;
+            color: white;
+            background-color: rgb(38, 187, 236);
+            width: 100%;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .menu {
+            margin: 10px 15px;
+            
+            .icon{
+              font-size: xx-large;
+              margin-top: 1vh;
+            }
+        }
+        ion-col{
+            margin-right: 10vh;
+        }
+
+        .profile-container {
+            //   background-color: whitesmoke;
+            //   margin: -5vh 0 0 10%;
+            //   border-radius: 10%;
+            //   height: 8vh;Training
+            //   width: 80%;  
+            padding: 0 0 0 0;
+            margin-top: 5vh;
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+            background-color: rgba(38, 187, 236, 0.82);
+            border-bottom-left-radius: 20%;
+            border-bottom-right-radius: 20%;
+        }
+    }
+
+    .createroom{
+        background-image: url(src/assets/icon/undraw_circuit_sdmr.png);
+        height: 50vh;
+        display: flex;
+        z-index: 999;
+
+
+        p {
+            font-size: 89px;
+            color: rgb(0, 151, 202);
+            margin-top: 27vh;
+            margin-left: 3vh;
+        }
+    }
+
+    .soal {
+        background-image: url(src/assets/icon/undraw_circuit_sdmr.png);
+        object-fit: contain;
+        height: 50vh;
+        display: flex;
+        z-index: 999;
+
+
+        p {
+            font-size: 89px;
+            color: rgb(0, 151, 202);
+            margin-top: 27vh;
+            margin-left: 3vh;
+        }
+    }
+
+    .content {
+        background-color: rgba(240, 240, 240, 0.842);
+        margin-top: -2vh;
+        height: 60%;
+        border-top-left-radius: 15%;
+        border-top-right-radius: 15%;
+        z-index: 1000;
+
+        ion-button {
+            --background: #26bbec;
+            --border-radius: 25px;
+            width: 48vh;
+            height: 8vh;
+            font-size: xx-large;
+            margin-top: 2vh;
+        }
+
+        .actionField {
+            margin-top: 2vh;
+            margin-left: 4vh;
+            padding-top: 1vh;
+            width: 48vh;
+
+            .form {
+                height: 8vh;
+                margin-top: 1vh;
+                border-radius: 25px;
+                background-color: white;
+                font-size: xx-large;
+                padding-left: 3vh !important;
+            }
+
+
+            .next {}
+        }
+
+    }
+
+}

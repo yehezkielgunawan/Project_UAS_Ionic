@@ -1,0 +1,70 @@
+.body {
+    position: inherit;
+
+    .navbar {
+        position: fixed;
+        z-index: 999;
+        display: flex;
+        color: white;
+        background-color: rgb(38, 187, 236);
+        width: 100%;
+        font-weight: 900;
+        font-size: 18px;
+
+        .menu {
+            margin: 10px 15px;
+            
+            .icon{
+              font-size: xx-large;
+              margin-top: 1vh;
+            }
+        }
+        ion-col{
+            margin-right: 10vh;
+        }
+    }
+
+}
+
+.banner{
+    background-image: url(src/assets/icon/undraw_winners_ao2o.png);
+    background-size: 100% 40vh;
+    margin-top: 5vh;
+    height: 40vh;
+    width: inherit;
+    display: flex;
+    z-index: 999;
+}
+
+.list{
+    
+    .list-md{
+        height: 14vh;
+        margin-bottom: 1vh;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .list-ios{
+        height: 14vh;
+        margin-bottom: 1vh;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    .name{
+        display: flex;
+        font-size: x-large;
+        justify-content: space-evenly;
+        padding-top:2vh;
+        color: white;
+    }
+
+    h5{
+        // position: absolute;
+        font-size: xx-large;
+        margin-left: 25%;
+        padding-bottom:2vh;
+        color: #E4FFF3;
+    }
+}
