@@ -22,3 +22,4 @@ ng build
 npx cap copy android
 npx cap open android
 ```
+7. If you want to make a change to firebase configurations, you can open https://drive.google.com/file/d/1WZOlIoBlQzPliUa9lSr5X0_wGcwVPtKl/view?usp=sharing **It's a complete documentation in Indonesia. Don't forget to use your UMN Credetial (SSO) to open it, because we have set it for UMN students and lecturers only**
