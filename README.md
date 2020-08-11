@@ -1,5 +1,6 @@
 # Quick Documentation
 ## Make sure you're in **master** branch, because this is the final version of the app
+## The deployed version can be seen at https://project-uas-ionic.vercel.app/login
 
 1. git clone `https://github.com/yehezkielgunawan/Project_UAS_Ionic.git`
 2. Go into **Elearning_Gamification** directory
